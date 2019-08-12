@@ -61,3 +61,9 @@
 0:0:0:0:0:0:0:1 - - [09/Aug/2019:14:44:25 +0300] "GET /login.jsp HTTP/1.1" 200 362 http-bio-8080-exec-6 43
 0:0:0:0:0:0:0:1 - - [09/Aug/2019:14:44:31 +0300] "POST /controller?action=login HTTP/1.1" 200 750 http-bio-8080-exec-9 1307
 0:0:0:0:0:0:0:1 - - [09/Aug/2019:14:44:49 +0300] "POST /controller?action=passengerGetRoutes HTTP/1.1" 200 4119 http-bio-8080-exec-2 1433
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:20:25 +0300] "GET /index.jsp HTTP/1.1" 200 214 http-bio-8080-exec-2 1402
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:20:25 +0300] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 5
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:20:26 +0300] "GET /main.jsp HTTP/1.1" 200 237 http-bio-8080-exec-4 532
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:23:58 +0300] "GET /index.html HTTP/1.1" 200 263 http-bio-8080-exec-2 88
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:23:59 +0300] "GET /main.jsp HTTP/1.1" 200 237 http-bio-8080-exec-3 155
+0:0:0:0:0:0:0:1 - - [09/Aug/2019:19:24:24 +0300] "GET /login.jsp HTTP/1.1" 200 484 http-bio-8080-exec-4 1363

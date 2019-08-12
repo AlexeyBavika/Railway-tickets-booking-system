@@ -15,6 +15,10 @@
 </head>
 <body>
 
+<form method="post" action="controller?action=passengerBackToMainPage">
+    <p><input type="submit" value="back"></p>
+</form>
+
 <table>
     <c:forEach items="${trains}" var="train">
         <tr>

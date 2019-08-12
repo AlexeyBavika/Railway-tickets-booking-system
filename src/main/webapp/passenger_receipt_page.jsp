@@ -14,12 +14,26 @@
     <title>Title</title>
 </head>
 <body>
+<form method="post" action="controller?action=passengerBackToMainPage">
+    <p><input type="submit" value="back"></p>
+</form>
+
 <h1>receipt</h1>
-<p><c:out value="${sessionScope.ticketId}"/></p>
+<p><c:out value="${sessionScope.trainId}"/></p>
 <p><c:out value="${sessionScope.getName}"/></p>
 <p><c:out value="${sessionScope.getSurname}"/></p>
 <p><c:out value="${sessionScope.getEmail}"/></p>
-<p><<c:out value="${sessionScope.getPhone}"/>/p>
-<p><input type="submit" value="print"></p>
+<p><c:out value="${sessionScope.getPhone}"/></p>
+<p><c:out value="${sessionScope.placeType}"/></p>
+<p><c:out value="${sessionScope.placeNum}"/></p>
+<p><c:out value="${sessionScope.price}"/></p>
+<p><c:out value="${sessionScope.routeDepartureStation}"/></p>
+<p><c:out value="${sessionScope.routeDepartureTime}"/></p>
+<p><c:out value="${sessionScope.routeDestinationStation}"/></p>
+<p><c:out value="${sessionScope.routeDestinationTime}"/></p>
+<form method="post" action="passenger_orders_page.jsp">
+    <p><input type="submit" value="print receipt"></p>
+</form>
+
 </body>
 </html>

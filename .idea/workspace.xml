@@ -2,62 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="595b9baf-2aff-4514-a45b-515dee8fa68e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/connection/ConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/connection/ConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/AbstractDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/AbstractDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RoleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/TrainDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/TrainDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLDAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/railway_tickets_booking_system_database.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/train/DeleteTrainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/train/DeleteTrainCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/user/DeleteUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/user/DeleteUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/command/CommandFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/ChooseTrainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/passenger/ChooseTrainCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/MakeOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/passenger/MakeOrderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/AbstractDAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/DAOFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/OrderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/PriceDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RoleDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RouteDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/TrainDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLDAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLOrderDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLPriceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLPriceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRoleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRouteDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLTrainDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLTrainDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Price.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/Train.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/MainAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/MainAdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/PassengerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/RegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/UpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/UpdateService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/HelloServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/connection/ConnectionPool.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/connection/ConnectionPool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/OrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/OrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RoleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RoleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/TrainDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/TrainDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/UserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_main_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_main_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_users_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_users_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main_admin_page.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_choose_train_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_choose_train_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_main_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_main_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_receipt_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_receipt_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_routes_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_routes_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/train/DeleteTrainCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/admin/train/DeleteTrainCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/user/DeleteUserCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/admin/user/DeleteUserCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/CommonCommandUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/ChooseTrainCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/passenger/ChooseTrainCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/MakeOrderCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/passenger/MakeOrderCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/DAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/OrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/PriceDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RouteDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/TrainDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLDAOFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLOrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLOrderDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLPriceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLPriceDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRoleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRoleDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRouteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRouteDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLTrainDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLTrainDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Price.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/Price.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Route.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/Route.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Train.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/Train.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/AdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/MainAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/MainAdminService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/PassengerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/RegisterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/UpdateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/UpdateService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-26" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-26" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-09" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/register_jsp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,9 +126,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="HTML File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -102,32 +143,38 @@
       </MavenImportingSettings>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
+  </component>
   <component name="ProjectId" id="1OjULKZKfkIC4mthvpcew4UivJC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../save/test/EpamFinalProject" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/t" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\EpamFinalProject\src\main\resources\logs" />
+      <recent name="C:\EpamFinalProject\src\main\resources" />
       <recent name="C:\EpamFinalProject\src\main\webapp" />
       <recent name="C:\EpamFinalProject\src\main\webapp\jsp\common" />
       <recent name="C:\EpamFinalProject\src\main\webapp\jsp\user" />
-      <recent name="C:\EpamFinalProject\src\main\webapp\jsp\admin" />
-      <recent name="C:\EpamFinalProject\src\main\webapp\jsp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -181,7 +228,7 @@
       </MavenSettings>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="LaunchBrowser.Before.Run" url="http://localhost:8080/controller?action=main" />
+        <option name="LaunchBrowser.Before.Run" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" url="http://localhost:8080/index.html" />
       </method>
     </configuration>
     <list>
@@ -237,6 +284,14 @@
       <workItem from="1565357767314" duration="245000" />
       <workItem from="1565358851782" duration="686000" />
       <workItem from="1565362252475" duration="623000" />
+      <workItem from="1565365152238" duration="4945000" />
+      <workItem from="1565454342884" duration="5674000" />
+      <workItem from="1565463479002" duration="902000" />
+      <workItem from="1565536993174" duration="13142000" />
+      <workItem from="1565596459822" duration="1176000" />
+      <workItem from="1565614044736" duration="12872000" />
+      <workItem from="1565631295350" duration="2748000" />
+      <workItem from="1565634290909" duration="100000" />
     </task>
     <servers />
   </component>
@@ -269,5 +324,76 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

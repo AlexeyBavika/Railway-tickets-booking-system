@@ -1,7 +1,7 @@
 package model.dao.mysql_dao_implementation;
 
 import model.dao.connection.ConnectionPool;
-import model.dao.dao_interfaces.UserDAO;
+import model.dao.dao.UserDAO;
 import model.entity.User;
 
 import java.sql.Connection;
@@ -9,9 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class MySQLUserDAO implements UserDAO {
     private static MySQLUserDAO instance = new MySQLUserDAO();

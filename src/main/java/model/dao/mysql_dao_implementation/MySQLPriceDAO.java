@@ -1,7 +1,7 @@
 package model.dao.mysql_dao_implementation;
 
 import model.dao.connection.ConnectionPool;
-import model.dao.dao_interfaces.PriceDAO;
+import model.dao.dao.PriceDAO;
 import model.entity.Price;
 
 import java.sql.Connection;
@@ -19,7 +19,7 @@ public class MySQLPriceDAO implements PriceDAO {
     }
 
     @Override
-    public Price createPrice(Price price) {
+    public void createPrice(Price price) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO prices (route_id, berth_price, coupe_price, deluxe_price) VALUES (?, ?, ?, ?)")) {
             preparedStatement.setInt(1, price.getRouteId());
@@ -30,13 +30,12 @@ public class MySQLPriceDAO implements PriceDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return price;
     }
 
     @Override
     public void deletePrice(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM prices WHERE price.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM prices WHERE prices.id = ?")) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -46,6 +45,7 @@ public class MySQLPriceDAO implements PriceDAO {
 
     @Override
     public List<Price> getAllPrices() {
+        Price price = null;
         List<Price> prices = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM prices")) {
@@ -55,7 +55,9 @@ public class MySQLPriceDAO implements PriceDAO {
                 int berthPrice = resultSet.getInt("berth_price");
                 int coupePrice = resultSet.getInt("coupe_price");
                 int deluxePrice = resultSet.getInt("deluxe_price");
-                prices.add(new Price(routeId, berthPrice, coupePrice, deluxePrice));
+                price = new Price(routeId, berthPrice, coupePrice, deluxePrice);
+                price.setId(resultSet.getInt("id"));
+                prices.add(price);
             }
         } catch (SQLException e) {
 

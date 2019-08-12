@@ -7,6 +7,10 @@
 </head>
 <body>
 
+<form method="post" action="controller?action=backToMainPage">
+    <p><input type="submit" value="back"></p>
+</form>
+
 <jstl:if test="${not empty requestScope.notExists}">
     <p>This user not exists</p>
 </jstl:if>

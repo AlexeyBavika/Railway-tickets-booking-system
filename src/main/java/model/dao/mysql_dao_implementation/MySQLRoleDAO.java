@@ -1,7 +1,7 @@
 package model.dao.mysql_dao_implementation;
 
 import model.dao.connection.ConnectionPool;
-import model.dao.dao_interfaces.RoleDAO;
+import model.dao.dao.RoleDAO;
 import model.entity.Role;
 
 import java.sql.Connection;

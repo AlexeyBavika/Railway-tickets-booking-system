@@ -1,6 +1,6 @@
 package model.dao.mysql_dao_implementation;
 
-import model.dao.dao_interfaces.*;
+import model.dao.dao.*;
 
 public class MySQLDAOFactory implements DAOFactory {
     @Override
@@ -31,5 +31,10 @@ public class MySQLDAOFactory implements DAOFactory {
     @Override
     public OrderDAO createOrderDAO() {
         return MySQLOrderDAO.getInstance();
+    }
+
+    @Override
+    public ChangeRoleRequestDAO createChangeRoleRequestDAO() {
+        return MySQLChangeRoleRequestDAO.getInstance();
     }
 }

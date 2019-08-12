@@ -14,6 +14,10 @@
 </head>
 <body>
 
+<form method="post" action="controller?action=backToMainPage">
+    <p><input type="submit" value="back"></p>
+</form>
+
 <jstl:if test="${not empty requestScope.notAdd}">
     <p>This user is exists</p>
 </jstl:if>

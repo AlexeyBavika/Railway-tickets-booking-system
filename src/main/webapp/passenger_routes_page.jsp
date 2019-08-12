@@ -14,6 +14,10 @@
     <title>Title</title>
 </head>
 <body>
+<form method="post" action="controller?action=passengerBackToMainPage">
+    <p><input type="submit" value="back"></p>
+</form>
+
 <c:if test="${not empty requestScope.routes}">
     <table>
         <c:forEach items="${routes}" var="route">
@@ -33,6 +37,10 @@
                 <td>
                     <form method="post" action="controller?action=chooseTrain">
                         <input type="hidden" name="id" value="${route.id}">
+                        <input type="hidden" name="routeDepartureStation" value="${route.departureStation}">
+                        <input type="hidden" name="routeDepartureTime" value="${route.departureTime}">
+                        <input type="hidden" name="routeDestinationStation" value="${route.destinationStation}">
+                        <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
                         <p><input type="submit" value="choose train"></p>
                     </form>
                 </td>
@@ -60,6 +68,10 @@
                 <td>
                     <form method="post" action="controller?action=chooseTrain">
                         <input type="hidden" name="id" value="${route.id}">
+                        <input type="hidden" name="routeDepartureStation" value="${route.departureStation}">
+                        <input type="hidden" name="routeDepartureTime" value="${route.departureTime}">
+                        <input type="hidden" name="routeDestinationStation" value="${route.destinationStation}">
+                        <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
                         <p><input type="submit" value="choose train"></p>
                     </form>
                 </td>

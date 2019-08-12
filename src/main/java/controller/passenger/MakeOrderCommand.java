@@ -16,20 +16,20 @@ public class MakeOrderCommand implements Command {
         int placeNum = Integer.parseInt(request.getParameter("placeNum")) - 1;
         String placeType = request.getParameter("placeType");
         UpdateService.getInstance().updateTrainPlaceNum(trainId, placeNum, placeType);
-        int passengerId = getPassengerData(request);
+
+        HttpSession session = request.getSession();
+        int passengerId = (int) session.getAttribute("getId");
         int price = Integer.parseInt(request.getParameter("price"));
         AdminService.getInstance().createOrder(passengerId, trainId, placeType, price);
+        setSessionAttributes(session, trainId, placeType, placeNum, price);
+
         return "passenger_receipt_page.jsp";
     }
 
-    private int getPassengerData(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
-        session.setAttribute("ticketId", user.hashCode() * 7);
-        session.setAttribute("getName", user.getName());
-        session.setAttribute("getSurname", user.getSurname());
-        session.setAttribute("getEmail", user.getEmail());
-        session.setAttribute("getPhone", user.getPhone());
-        return user.getId();
+    private void setSessionAttributes(HttpSession session, int trainId, String placeType, int placeNum, int price) {
+        session.setAttribute("trainId", trainId);
+        session.setAttribute("placeType", placeType);
+        session.setAttribute("placeNum", placeNum);
+        session.setAttribute("price", price);
     }
 }
