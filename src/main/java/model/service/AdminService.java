@@ -1,12 +1,9 @@
 package model.service;
 
-import model.dao.dao_interfaces.AbstractDAOFactory;
-import model.dao.dao_interfaces.DAOFactory;
-import model.dao.dao_interfaces.Database;
-import model.entity.Order;
-import model.entity.Route;
-import model.entity.Train;
-import model.entity.User;
+import model.dao.dao.AbstractDAOFactory;
+import model.dao.dao.DAOFactory;
+import model.dao.dao.Database;
+import model.entity.*;
 
 import java.util.List;
 
@@ -35,6 +32,10 @@ public class AdminService {
 
     public void deleteUser(int id) {
         factory.createUserDAO().deleteUser(id);
+    }
+
+    public void updateUserRole(int userId, int roleId) {
+        factory.createUserDAO().updateUserRole(userId, roleId);
     }
 
     public void createTrain(Train train) {
@@ -71,5 +72,25 @@ public class AdminService {
 
     public void deleteOrder(int id) {
         factory.createOrderDAO().deleteOrder(id);
+    }
+
+    public void createPrice(Price price) {
+        factory.createPriceDAO().createPrice(price);
+    }
+
+    public List<Price> getAllPrices() {
+        return factory.createPriceDAO().getAllPrices();
+    }
+
+    public void deletePrice(int priceId) {
+        factory.createPriceDAO().deletePrice(priceId);
+    }
+
+    public List<ChangeRoleRequest> getAllChangeRoleRequests() {
+        return factory.createChangeRoleRequestDAO().getAllChangeRoleRequests();
+    }
+
+    public void deleteChangeRoleRequest(int id) {
+        factory.createChangeRoleRequestDAO().deleteChangeRoleRequest(id);
     }
 }

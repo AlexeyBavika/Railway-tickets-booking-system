@@ -10,7 +10,12 @@ public class DeleteUserCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("userToDelete"));
-        AdminService.getInstance().deleteUser(id);
+        int userRoleId = Integer.parseInt(request.getParameter("userToDeleteRoleId"));
+        if(userRoleId == 3) {
+            AdminService.getInstance().deleteUser(id);
+        } else {
+            request.setAttribute("cantDeleteUser", "can't delete user");
+        }
         return "controller?action=getAllUsers";
     }
 }

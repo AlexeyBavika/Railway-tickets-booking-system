@@ -16,6 +16,11 @@ public class ChooseTrainCommand implements Command {
         int routeId = Integer.parseInt(request.getParameter("id"));
         List<Train> trains = PassengerService.getInstance().getAvailableTrains(routeId);
         Price price = PassengerService.getInstance().getAvailablePrice(routeId);
+        HttpSession session = request.getSession();
+        session.setAttribute("routeDepartureStation", request.getParameter("routeDepartureStation"));
+        session.setAttribute("routeDepartureTime", request.getParameter("routeDepartureTime"));
+        session.setAttribute("routeDestinationStation", request.getParameter("routeDestinationStation"));
+        session.setAttribute("routeDestinationTime", request.getParameter("routeDestinationTime"));
         request.setAttribute("berthPrice", price.getBerthPrice());
         request.setAttribute("coupePrice", price.getCoupePrice());
         request.setAttribute("deluxePrice", price.getDeluxePrice());

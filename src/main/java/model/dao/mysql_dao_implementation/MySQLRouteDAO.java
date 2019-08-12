@@ -1,7 +1,7 @@
 package model.dao.mysql_dao_implementation;
 
 import model.dao.connection.ConnectionPool;
-import model.dao.dao_interfaces.RouteDAO;
+import model.dao.dao.RouteDAO;
 import model.entity.Route;
 
 import java.sql.*;
@@ -125,5 +125,7 @@ public class MySQLRouteDAO implements RouteDAO {
         return routes;
     }
 
-
 }
+
+
+// елси маршрут нет поездов тзо недостуцпен эжжии

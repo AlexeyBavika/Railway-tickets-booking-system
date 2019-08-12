@@ -1,8 +1,8 @@
 package model.service;
 
-import model.dao.dao_interfaces.AbstractDAOFactory;
-import model.dao.dao_interfaces.DAOFactory;
-import model.dao.dao_interfaces.Database;
+import model.dao.dao.AbstractDAOFactory;
+import model.dao.dao.DAOFactory;
+import model.dao.dao.Database;
 import model.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,8 +35,6 @@ public class LoginService {
         String page = null;
         switch (factory.createUserDAO().getUserRoleId(user)) {
             case 1:
-                page = "controller?action=getAllAdmins";
-                break;
             case 2:
                 page = "admin_main_page.jsp";
                 break;
@@ -46,7 +44,11 @@ public class LoginService {
             default: // error
         }
         HttpSession session = request.getSession();
-        session.setAttribute("user", user);
+        session.setAttribute("getId", user.getId());
+        session.setAttribute("getName", user.getName());
+        session.setAttribute("getSurname", user.getSurname());
+        session.setAttribute("getEmail", user.getEmail());
+        session.setAttribute("getPhone", user.getPhone());
         return page;
     }
 }

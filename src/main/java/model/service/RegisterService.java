@@ -1,12 +1,11 @@
 package model.service;
 
-import model.dao.dao_interfaces.AbstractDAOFactory;
-import model.dao.dao_interfaces.DAOFactory;
-import model.dao.dao_interfaces.Database;
+import model.dao.dao.AbstractDAOFactory;
+import model.dao.dao.DAOFactory;
+import model.dao.dao.Database;
 import model.entity.User;
 
 import java.util.List;
-import java.util.Set;
 
 public class RegisterService {
     private static volatile RegisterService instance;

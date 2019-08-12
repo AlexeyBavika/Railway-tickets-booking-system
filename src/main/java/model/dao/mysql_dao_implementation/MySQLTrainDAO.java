@@ -1,7 +1,7 @@
 package model.dao.mysql_dao_implementation;
 
 import model.dao.connection.ConnectionPool;
-import model.dao.dao_interfaces.TrainDAO;
+import model.dao.dao.TrainDAO;
 import model.entity.Train;
 
 import java.sql.Connection;
@@ -36,7 +36,7 @@ public class MySQLTrainDAO implements TrainDAO {
     @Override
     public void deleteTrain(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM trains WHERE id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM trains WHERE trains.id = ?")) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

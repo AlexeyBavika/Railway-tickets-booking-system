@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94">
-        <schema name="railway_ticket_booking_system" object-types="table, function, view, index, column, dataset trigger, procedure, constraint" />
+        <schema name="railway_ticket_booking_system" object-types="index, constraint, view, table, function, column, dataset trigger, procedure" />
       </connection>
     </loaded-nodes>
   </component>
@@ -52,9 +52,6 @@
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
-  </component>
-  <component name="DBNavigator.Project.FileConnectionMappingManager">
-    <mapping file-url="file://$PROJECT_DIR$/railway ticket booking system database.sql" connection-id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94" session-id="MAIN" current-schema="railway_ticket_booking_system" />
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />

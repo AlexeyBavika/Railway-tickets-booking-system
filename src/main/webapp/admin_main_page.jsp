@@ -36,5 +36,9 @@
     <p><input type="submit" value="orders" size="30"></p>
 </form>
 
+<form method="post" action="controller?action=getAllChangeRoleRequests">
+    <p><input type="submit" value="change role requests" size="30"></p>
+</form>
+
 </body>
 </html>

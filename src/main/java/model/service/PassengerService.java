@@ -1,15 +1,10 @@
 package model.service;
 
-import model.dao.dao_interfaces.AbstractDAOFactory;
-import model.dao.dao_interfaces.DAOFactory;
-import model.dao.dao_interfaces.Database;
-import model.entity.Price;
-import model.entity.Route;
-import model.entity.Train;
+import model.dao.dao.AbstractDAOFactory;
+import model.dao.dao.DAOFactory;
+import model.dao.dao.Database;
+import model.entity.*;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -47,6 +42,14 @@ public class PassengerService {
 
     public Price getAvailablePrice(int routeId) {
         return factory.createPriceDAO().getPriceByRouteId(routeId);
+    }
+
+    public void createChangeRoleRequest(int passengerId, String text) {
+        factory.createChangeRoleRequestDAO().createChangeRoleRequest(passengerId, text);
+    }
+
+    public List<Order> getAllOrders(int passengerId) {
+        return factory.createOrderDAO().getAllOrdersById(passengerId);
     }
 
 }

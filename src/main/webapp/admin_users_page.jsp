@@ -50,9 +50,13 @@
                 <td>
                     <form method="post" action="controller?action=deleteUser">
                         <input type="hidden" name="userToDelete" value="${user.id}">
+                        <input type="hidden" name="userToDeleteRoleId" value="${user.roleId}">
                         <p><input type="submit" value="delete"></p>
                     </form>
                 </td>
+                <c:if test="${not empty requestScope.cantDeleteUser}">
+                    <c:out value="${requestScope.cantDeleteUser}"/>
+                </c:if>
             </tr>
         </c:forEach>
     </table>
