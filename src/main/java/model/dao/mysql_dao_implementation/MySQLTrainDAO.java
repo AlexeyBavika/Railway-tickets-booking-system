@@ -3,6 +3,8 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.TrainDAO;
 import model.entity.Train;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLTrainDAO implements TrainDAO {
+    private static final Logger LOGGER = LogManager.getLogger(MySQLTrainDAO.class);
+
     private static MySQLTrainDAO instance = new MySQLTrainDAO();
 
     static MySQLTrainDAO getInstance() {
@@ -28,7 +32,9 @@ public class MySQLTrainDAO implements TrainDAO {
             preparedStatement.setInt(4, train.getDeluxeNum());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't create train";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return train;
     }
@@ -40,7 +46,9 @@ public class MySQLTrainDAO implements TrainDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't delete train";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -60,7 +68,9 @@ public class MySQLTrainDAO implements TrainDAO {
                 trains.add(train);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all trains";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return trains;
     }
@@ -78,7 +88,9 @@ public class MySQLTrainDAO implements TrainDAO {
             int deluxeNum = resultSet.getInt("deluxe_num");
             train = new Train(routeId, berthNum, coupeNum, deluxeNum);
         } catch (SQLException e) {
-
+            String errorText = "can't get train by id";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return train;
     }
@@ -101,7 +113,9 @@ public class MySQLTrainDAO implements TrainDAO {
                 trains.add(train);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get trains by route id";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return trains;
     }
@@ -114,7 +128,9 @@ public class MySQLTrainDAO implements TrainDAO {
             preparedStatement.setInt(2, trainId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't update train route";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -126,6 +142,8 @@ public class MySQLTrainDAO implements TrainDAO {
             preparedStatement.setInt(2, trainId);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            String errorText = "can't update train placenum";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
     }

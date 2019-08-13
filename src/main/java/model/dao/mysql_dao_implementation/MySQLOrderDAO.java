@@ -3,6 +3,8 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.OrderDAO;
 import model.entity.Order;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLOrderDAO implements OrderDAO {
+    private static final Logger LOGGER = LogManager.getLogger(MySQLOrderDAO.class);
+
     private static MySQLOrderDAO instance = new MySQLOrderDAO();
 
     static MySQLOrderDAO getInstance() {
@@ -28,6 +32,8 @@ public class MySQLOrderDAO implements OrderDAO {
             preparedStatement.setInt(4, price);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            String errorText = "can't create order";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
     }
@@ -39,7 +45,9 @@ public class MySQLOrderDAO implements OrderDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't delete order";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -60,6 +68,8 @@ public class MySQLOrderDAO implements OrderDAO {
                 orders.add(order);
             }
         } catch (SQLException e) {
+            String errorText = "can't get all orders";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return orders;
@@ -83,6 +93,8 @@ public class MySQLOrderDAO implements OrderDAO {
                 orders.add(order);
             }
         } catch (SQLException e) {
+            String errorText = "can't get all orders by id";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return orders;

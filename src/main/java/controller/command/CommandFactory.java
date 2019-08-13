@@ -17,8 +17,6 @@ import controller.admin.train.GetAllTrainsCommand;
 import controller.admin.user.DeleteUserCommand;
 import controller.admin.user.GetAllUsersCommand;
 import controller.common.*;
-import controller.main_admin.DeleteAdminCommand;
-import controller.main_admin.GetAllAdminsCommand;
 import controller.passenger.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -79,10 +77,6 @@ public class CommandFactory {
 
         commands.put("createPrice", new CreatePriceCommand());
         commands.put("getAllPrices", new GetAllPricesCommand());
-
-        //main admin commands
-        commands.put("getAllAdmins", new GetAllAdminsCommand());
-        commands.put("deleteAdmin", new DeleteAdminCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

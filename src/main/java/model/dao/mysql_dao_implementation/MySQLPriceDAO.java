@@ -3,6 +3,8 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.PriceDAO;
 import model.entity.Price;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPriceDAO implements PriceDAO {
+    private static final Logger LOGGER = LogManager.getLogger(MySQLPriceDAO.class);
+
     private static MySQLPriceDAO instance = new MySQLPriceDAO();
 
     static MySQLPriceDAO getInstance() {
@@ -28,6 +32,8 @@ public class MySQLPriceDAO implements PriceDAO {
             preparedStatement.setInt(4, price.getDeluxePrice());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            String errorText = "can't create price";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
     }
@@ -39,7 +45,9 @@ public class MySQLPriceDAO implements PriceDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't delete price";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -60,7 +68,9 @@ public class MySQLPriceDAO implements PriceDAO {
                 prices.add(price);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all prices";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return prices;
     }
@@ -81,6 +91,8 @@ public class MySQLPriceDAO implements PriceDAO {
                 price.setId(resultSet.getInt("id"));
             }
         } catch (SQLException e) {
+            String errorText = "can't get price by route id";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return price;

@@ -3,12 +3,16 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.RouteDAO;
 import model.entity.Route;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLRouteDAO implements RouteDAO {
+    private static final Logger LOGGER = LogManager.getLogger(MySQLRouteDAO.class);
+
     private static MySQLRouteDAO instance = new MySQLRouteDAO();
 
     static MySQLRouteDAO getInstance() {
@@ -25,6 +29,8 @@ public class MySQLRouteDAO implements RouteDAO {
             preparedStatement.setString(4, route.getDestinationTime());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            String errorText = "can't create route";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return route;
@@ -37,7 +43,9 @@ public class MySQLRouteDAO implements RouteDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't delete route";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -57,7 +65,9 @@ public class MySQLRouteDAO implements RouteDAO {
                 routes.add(route);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all routes";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return routes;
     }
@@ -75,7 +85,9 @@ public class MySQLRouteDAO implements RouteDAO {
             String destinationTime = resultSet.getString("destination_time");
             route = new Route(departureStation, departureTime, destinationStation, destinationTime);
         } catch (SQLException e) {
-
+            String errorText = "can't get route by id";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return route;
     }
@@ -98,6 +110,8 @@ public class MySQLRouteDAO implements RouteDAO {
                 routes.add(route);
             }
         } catch (SQLException e) {
+            String errorText = "can't get routes from date";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return routes;
@@ -120,6 +134,8 @@ public class MySQLRouteDAO implements RouteDAO {
                 routes.add(route);
             }
         } catch (SQLException e) {
+            String errorText = "can't get routes by concrete stations";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return routes;

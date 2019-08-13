@@ -3,6 +3,8 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.UserDAO;
 import model.entity.User;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLUserDAO implements UserDAO {
+    private static final Logger LOGGER = LogManager.getLogger(MySQLUserDAO.class);
+
     private static MySQLUserDAO instance = new MySQLUserDAO();
 
     static MySQLUserDAO getInstance() {
@@ -30,6 +34,8 @@ public class MySQLUserDAO implements UserDAO {
             preparedStatement.setInt(6, user.getRoleId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
+            String errorText = "can't create user";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return user;
@@ -42,7 +48,9 @@ public class MySQLUserDAO implements UserDAO {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't delete user";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -64,7 +72,9 @@ public class MySQLUserDAO implements UserDAO {
                 users.add(user);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all users";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return users;
     }
@@ -97,7 +107,9 @@ public class MySQLUserDAO implements UserDAO {
             preparedStatement.setInt(2, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-
+            String errorText = "can't update user role";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -112,7 +124,9 @@ public class MySQLUserDAO implements UserDAO {
                 emails.add(email);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all emails";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return emails;
     }
@@ -128,7 +142,9 @@ public class MySQLUserDAO implements UserDAO {
                 phones.add(phone);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all phones";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return phones;
     }
@@ -144,7 +160,9 @@ public class MySQLUserDAO implements UserDAO {
                 userRoleId = resultSet.getInt("role_id");
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get user role id";
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return userRoleId;
     }
@@ -170,6 +188,8 @@ public class MySQLUserDAO implements UserDAO {
             }
 
         } catch (SQLException e) {
+            String errorText = "can't get user";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return user;
@@ -193,7 +213,8 @@ public class MySQLUserDAO implements UserDAO {
                 admins.add(user);
             }
         } catch (SQLException e) {
-
+            String errorText = "can't get all admins";
+            LOGGER.error(errorText);
         }
         return admins;
     }

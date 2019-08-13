@@ -3,8 +3,8 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.ChangeRoleRequestDAO;
 import model.entity.ChangeRoleRequest;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,10 +28,10 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
             preparedStatement.setInt(1, passengerId);
             preparedStatement.setString(2, text);
             preparedStatement.executeUpdate();
-            throw new SQLException();
         } catch (SQLException e) {
             String errorText = "can't create change role request.";
-            LOGGER.error(errorText, e);
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 
@@ -51,7 +51,8 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
             }
         } catch (SQLException e) {
             String errorText = "can't get all change role requests.";
-            LOGGER.error(errorText, e);
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
         return changeRoleRequests;
     }
@@ -64,7 +65,8 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             String errorText = "can't delete change role request";
-            LOGGER.error(errorText, e);
+            LOGGER.error(errorText);
+            e.printStackTrace();
         }
     }
 }

@@ -1,11 +1,14 @@
 package model.dao.connection;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public class ConnectionPool {
+    private static final Logger LOGGER = LogManager.getLogger(ConnectionPool.class);
     private static ConnectionPool connectionPool = null;
     private static BasicDataSource basicDataSource = new BasicDataSource();
 
@@ -26,6 +29,8 @@ public class ConnectionPool {
         try {
             return basicDataSource.getConnection();
         } catch (SQLException e) {
+            String errorText = "can't get connection";
+            LOGGER.error(errorText);
             e.printStackTrace();
         }
         return null;

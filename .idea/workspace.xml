@@ -143,11 +143,6 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="950" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
-  </component>
   <component name="ProjectId" id="1OjULKZKfkIC4mthvpcew4UivJC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -156,11 +151,10 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/t" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/bes" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -170,8 +164,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\EpamFinalProject\src\main\resources\logs" />
       <recent name="C:\EpamFinalProject\src\main\resources" />
+      <recent name="C:\EpamFinalProject\src\main\resources\logs" />
       <recent name="C:\EpamFinalProject\src\main\webapp" />
       <recent name="C:\EpamFinalProject\src\main\webapp\jsp\common" />
       <recent name="C:\EpamFinalProject\src\main\webapp\jsp\user" />
@@ -292,6 +286,8 @@
       <workItem from="1565614044736" duration="12872000" />
       <workItem from="1565631295350" duration="2748000" />
       <workItem from="1565634290909" duration="100000" />
+      <workItem from="1565684972333" duration="7388000" />
+      <workItem from="1565696615635" duration="978000" />
     </task>
     <servers />
   </component>
