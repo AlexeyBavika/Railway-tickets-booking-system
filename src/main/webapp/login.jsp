@@ -12,7 +12,7 @@
 </form>
 
 <jstl:if test="${not empty requestScope.notExists}">
-    <p>This user not exists</p>
+    <p>This user exists</p>
 </jstl:if>
 
 <form method="post" action="controller?action=login">

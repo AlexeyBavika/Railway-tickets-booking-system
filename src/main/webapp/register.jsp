@@ -19,7 +19,11 @@
 </form>
 
 <jstl:if test="${not empty requestScope.notAdd}">
-    <p>This user is exists</p>
+    <jstl:out value="${test}"/>
+</jstl:if>
+
+<jstl:if test="${not empty requestScope.notValidRegister}">
+    <jstl:out value="${test}"/>
 </jstl:if>
 
 <form method="post" action="controller?action=register">

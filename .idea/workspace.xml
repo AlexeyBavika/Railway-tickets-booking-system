@@ -128,8 +128,8 @@
         <option value="Enum" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -154,7 +154,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/bes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/p" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -288,6 +288,8 @@
       <workItem from="1565634290909" duration="100000" />
       <workItem from="1565684972333" duration="7388000" />
       <workItem from="1565696615635" duration="978000" />
+      <workItem from="1565706090006" duration="5248000" />
+      <workItem from="1565769331194" duration="641000" />
     </task>
     <servers />
   </component>

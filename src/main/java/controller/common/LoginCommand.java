@@ -16,7 +16,6 @@ public class LoginCommand implements Command {
         User user = LoginService.getInstance().loginUser(email, password);
         if (user == null) {
             request.setAttribute("notExists", "notExists");
-            System.out.println("null");
             return "login.jsp";
         } else {
             pageToRedirectUser = LoginService.getInstance().checkRole(user, request);
