@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [16/Aug/2019:00:03:59 +0300] "GET /main.jsp HTTP/1.1" 200 4373 http-bio-8080-exec-3 271
+0:0:0:0:0:0:0:1 - - [16/Aug/2019:00:04:37 +0300] "POST /controller?action=main HTTP/1.1" 200 4449 http-bio-8080-exec-6 40
+0:0:0:0:0:0:0:1 - - [16/Aug/2019:00:04:42 +0300] "POST /controller?action=login HTTP/1.1" 200 3041 http-bio-8080-exec-7 1872
+0:0:0:0:0:0:0:1 - - [16/Aug/2019:00:04:45 +0300] "POST /controller?action=getAllOrders HTTP/1.1" 500 3301 http-bio-8080-exec-9 727

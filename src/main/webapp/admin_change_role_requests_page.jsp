@@ -2,6 +2,8 @@
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -21,7 +23,7 @@
                 <div class="header__logo">RTB inc.</div>
             </div>
             <div class="col-auto header__account-bar">
-                <button class="text-button header__login">logout</button>
+                <button class="text-button header__login"><fmt:message key="logout"/></button>
             </div>
         </div>
     </div>
@@ -33,16 +35,16 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 orders__title">Requests list</h2>
+                <h2 class="h2 orders__title"><fmt:message key="admin.changeRoleRequests.changeRoleRequestsList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <ul class="main-list orders__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__long-id">user id</div>
-                        <div class="main-list__col main-list__message">message</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="changeRoleRequests.id"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="changeRoleRequests.userId"/></div>
+                        <div class="main-list__col main-list__message"><fmt:message key="changeRoleRequests.message"/></div>
                     </li>
                     <jstl:forEach items="${changeRoleRequests}" var="changeRoleRequest">
                         <li class="main-list__item tours__item">
@@ -52,11 +54,11 @@
                             <form method="post" action="controller?action=updateUserRole">
                                 <input type="hidden" name="passengerId" value="${changeRoleRequest.passengerId}">
                                 <input type="hidden" name="passengerNewRoleId" value="2">
-                                <button class="bg-button main-list__accept">accept</button>
+                                <button class="bg-button main-list__accept"><fmt:message key="accept"/></button>
                             </form>
                             <form method="post" action="controller?action=deleteChangeRoleRequest">
                                 <input type="hidden" name="changeRoleRequestToDelete" value="${changeRoleRequest.id}">
-                                <button class="bg-button main-list__delete">delete</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="delete"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -88,7 +90,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>
@@ -96,38 +98,3 @@
 <script src="resources/js/main.js"></script>
 </body>
 </html>
-
-
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Title</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<c:forEach items="${changeRoleRequests}" var="changeRoleRequest">--%>
-<%--    <tr>--%>
-<%--        <td>--%>
-<%--            <c:out value="${changeRoleRequest.id}"/>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <c:out value="${changeRoleRequest.passengerId}"/>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <c:out value="${changeRoleRequest.text}"/>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <form method="post" action="controller?action=updateUserRole">--%>
-<%--                <input type="hidden" name="passengerId" value="${changeRoleRequest.passengerId}">--%>
-<%--                <input type="hidden" name="passengerNewRoleId" value="2">--%>
-<%--                <input type="submit" value="new role : 2">--%>
-<%--            </form>--%>
-<%--        </td>--%>
-<%--        <td>--%>
-<%--            <form method="post" action="controller?action=deleteChangeRoleRequest">--%>
-<%--                <input type="hidden" name="changeRoleRequestToDelete" value="${changeRoleRequest.id}">--%>
-<%--                <p><input type="submit" value="delete"></p>--%>
-<%--            </form>--%>
-<%--        </td>--%>
-<%--    </tr>--%>
-<%--</c:forEach>--%>
-<%--</body>--%>
-<%--</html>--%>

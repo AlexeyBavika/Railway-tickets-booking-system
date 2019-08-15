@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alexey
-  Date: 03.08.2019
-  Time: 20:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -32,7 +25,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -45,17 +38,19 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 tours__title">Trains list and creation</h2>
+                <h2 class="h2 tours__title"><fmt:message key="admin.trains.trainsList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <form method="post" action="controller?action=createTrain" class="tours__form">
-                    <input type="text" name="routeId" id="" class="main-input tours__input" placeholder="route id">
-                    <input type="text" name="berthNum" id="" class="main-input tours__input" placeholder="berth num">
-                    <input type="text" name="coupeNum" id="" class="main-input tours__input" placeholder="coupe num">
-                    <input type="text" name="deluxeNum" id="" class="main-input tours__input" placeholder="deluxe num">
-                    <input type="submit" value="Add train" class="bg-button tours__button">
+                    <p><input type="text" name="routeId" id="" class="main-input tours__input"> <fmt:message key="trains.routeId"/></p>
+                    <p><input type="text" name="berthNum" id="" class="main-input tours__input"> <fmt:message key="trains.berthNum"/></p>
+                    <p><input type="text" name="coupeNum" id="" class="main-input tours__input"> <fmt:message key="trains.coupeNum"/></p>
+                    <p><input type="text" name="deluxeNum" id="" class="main-input tours__input"> <fmt:message key="trains.deluxeNum"/></p>
+                    <button class="bg-button tours__button">
+                        <fmt:message key="create"/>
+                    </button>
                 </form>
             </div>
         </div>
@@ -63,11 +58,11 @@
             <div class="col-12">
                 <ul class="main-list tours__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__long-id">route id</div>
-                        <div class="main-list__col main-list__long-id">berth num</div>
-                        <div class="main-list__col main-list__long-id">coupe num</div>
-                        <div class="main-list__col main-list__long-id">deluxe num</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="trains.id"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="trains.routeId"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="trains.berthNum"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="trains.coupeNum"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="trains.deluxeNum"/></div>
                     </li>
                     <jstl:forEach items="${trains}" var="train">
                         <li class="main-list__item tours__item">
@@ -78,7 +73,7 @@
                             <div class="main-list__col main-list__long-id"><jstl:out value="${train.deluxeNum}"/></div>
                                 <form method="post" action="controller?action=deleteTrain">
                                     <input type="hidden" name="trainToDelete" value="${train.id}">
-                                    <button class="bg-button main-list__delete">delete</button>
+                                    <button class="bg-button main-list__delete"><fmt:message key="delete"/></button>
                                 </form>
                         </li>
                     </jstl:forEach>
@@ -100,7 +95,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

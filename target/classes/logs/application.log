@@ -5,3 +5,4 @@
 2019-08-14 21:05:05 ERROR MySQLRouteDAO:47 - can't delete route
 2019-08-14 21:06:39 ERROR MySQLRouteDAO:47 - can't delete route
 2019-08-14 21:06:41 ERROR MySQLRouteDAO:47 - can't delete route
+2019-08-15 23:15:16 ERROR MySQLTrainDAO:36 - can't create train

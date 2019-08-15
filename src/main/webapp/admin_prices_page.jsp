@@ -2,6 +2,8 @@
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored ="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +24,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -35,17 +37,19 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 tours__title">Prices list and creation</h2>
+                <h2 class="h2 tours__title"><fmt:message key="admin.prices.pricesList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <form method="post" action="controller?action=createPrice" class="prices__form">
-                    <input type="text" name="routeId" id="" class="main-input prices__input prices__id-input" placeholder="route id">
-                    <input type="text" name="berthPrice" id="" class="main-input prices__input" placeholder="berth price">
-                    <input type="text" name="coupePrice" id="" class="main-input prices__input" placeholder="coupe price">
-                    <input type="text" name="deluxePrice" id="" class="main-input prices__input" placeholder="deluxe price">
-                    <input type="submit" value="Add price" class="bg-button prices__button">
+                    <p><input type="text" name="routeId" id="" class="main-input prices__input prices__id-input"> <fmt:message key="prices.routeId"/></p>
+                    <p><input type="text" name="berthPrice" id="" class="main-input prices__input"> <fmt:message key="prices.berthPrice"/></p>
+                    <p><input type="text" name="coupePrice" id="" class="main-input prices__input"> <fmt:message key="prices.coupePrice"/></p>
+                    <p><input type="text" name="deluxePrice" id="" class="main-input prices__input"> <fmt:message key="prices.deluxePrice"/></p>
+                    <button class="bg-button prices__button">
+                        <fmt:message key="create"/>
+                    </button>
                 </form>
             </div>
         </div>
@@ -53,11 +57,11 @@
             <div class="col-12">
                 <ul class="main-list tours__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__id">route id</div>
-                        <div class="main-list__col main-list__price">berth</div>
-                        <div class="main-list__col main-list__price">coupe</div>
-                        <div class="main-list__col main-list__price">deluxe</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="prices.id"/></div>
+                        <div class="main-list__col main-list__id"><fmt:message key="prices.routeId"/></div>
+                        <div class="main-list__col main-list__price"><fmt:message key="prices.berthPrice"/></div>
+                        <div class="main-list__col main-list__price"><fmt:message key="prices.coupePrice"/></div>
+                        <div class="main-list__col main-list__price"><fmt:message key="prices.deluxePrice"/></div>
                     </li>
                     <jstl:forEach items="${prices}" var="price">
                         <li class="main-list__item tours__item">
@@ -68,7 +72,7 @@
                             <div class="main-list__col main-list__price"><jstl:out value="${price.deluxePrice}"/></div>
                             <form method="post" action="controller?action=deletePrice">
                                 <input type="hidden" name="priceToDelete" value="${price.id}">
-                                <button class="bg-button main-list__delete">delete</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="delete"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -90,7 +94,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

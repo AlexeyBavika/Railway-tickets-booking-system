@@ -5,7 +5,7 @@
 
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="${bundle}"/>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
                 <div class="header__logo">RTB inc.</div>
             </div>
             <div class="col-auto header__account-bar">
-                <button class="text-button header__login">logout</button>
+                <button class="text-button header__login"><fmt:message key="logout"/></button>
             </div>
         </div>
     </div>
@@ -36,21 +36,19 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 tours__title">Routes list and creation</h2>
+                <h2 class="h2 tours__title"><fmt:message key="admin.routes.routesList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <form method="post" action="controller?action=createRoute" class="tours__form">
-                    <input type="text" name="departureStation" id="" class="main-input tours__input"
-                           placeholder="departure station">
-                    <input type="text" name="departureTime" id="" class="main-input tours__input"
-                           placeholder="departure time">
-                    <input type="text" name="destinationStation" id="" class="main-input tours__input"
-                           placeholder="destination station">
-                    <input type="text" name="destinationTime" id="" class="main-input tours__input"
-                           placeholder="destination time">
-                    <input type="submit" value="Add route" class="bg-button tours__button">
+                    <p><input type="text" name="departureStation" id="" class="main-input tours__input"> <fmt:message key="routes.departureStation"/></p>
+                    <p><input type="text" name="departureTime" id="" class="main-input tours__input"> <fmt:message key="routes.departureTime"/></p>
+                    <p><input type="text" name="destinationStation" id="" class="main-input tours__input"> <fmt:message key="routes.destinationStation"/></p>
+                    <p><input type="text" name="destinationTime" id="" class="main-input tours__input"> <fmt:message key="routes.destinationTime"/></p>
+                    <button class="bg-button tours__button">
+                        <fmt:message key="create"/>
+                    </button>
                 </form>
             </div>
         </div>
@@ -58,11 +56,11 @@
             <div class="col-12">
                 <ul class="main-list tours__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__station">departure station</div>
-                        <div class="main-list__col main-list__date">departure time</div>
-                        <div class="main-list__col main-list__station">destination station</div>
-                        <div class="main-list__col main-list__date">destination time</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="routes.id"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message key="routes.departureStation"/></div>
+                        <div class="main-list__col main-list__date"><fmt:message key="routes.departureTime"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message key="routes.destinationStation"/></div>
+                        <div class="main-list__col main-list__date"><fmt:message key="routes.destinationTime"/></div>
                     </li>
                     <jstl:forEach items="${routes}" var="route">
                         <li class="main-list__item tours__item">
@@ -73,7 +71,7 @@
                             <div class="main-list__col main-list__date"><jstl:out value="${route.destinationTime}"/></div>
                             <form method="post" action="controller?action=deleteRoute">
                                 <input type="hidden" name="routeToDelete" value="${route.id}">
-                                <button class="bg-button main-list__delete">delete</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="delete"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -105,7 +103,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

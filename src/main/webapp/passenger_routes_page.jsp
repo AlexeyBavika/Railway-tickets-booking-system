@@ -2,6 +2,8 @@
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +24,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -35,18 +37,18 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 tours__title">Routes list</h2>
+                <h2 class="h2 tours__title"><fmt:message key="admin.routes.routesList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <ul class="main-list tours__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__station">departure station</div>
-                        <div class="main-list__col main-list__date">departure time</div>
-                        <div class="main-list__col main-list__station">destination station</div>
-                        <div class="main-list__col main-list__date">destination time</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="routes.id"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message key="routes.departureStation"/></div>
+                        <div class="main-list__col main-list__date"><fmt:message key="routes.departureTime"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message key="routes.destinationStation"/></div>
+                        <div class="main-list__col main-list__date"><fmt:message key="routes.destinationTime"/></div>
                     </li>
                     <%--    <jstl:if test="${not empty requestScope.routes}">--%>
                     <jstl:forEach items="${routes}" var="route">
@@ -64,7 +66,7 @@
                                 <input type="hidden" name="routeDepartureTime" value="${route.departureTime}">
                                 <input type="hidden" name="routeDestinationStation" value="${route.destinationStation}">
                                 <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
-                                <button class="bg-button main-list__delete">choose train</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="passenger.routes.chooseTrain"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -87,24 +89,24 @@
                                     <input type="hidden" name="routeDestinationStation"
                                            value="${route.destinationStation}">
                                     <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
-                                    <button class="bg-button main-list__delete">choose train</button>
+                                    <button class="bg-button main-list__delete"><fmt:message key="passenger.routes.chooseTrain"/></button>
                                 </form>
                             </li>
                         </jstl:forEach>
                     </jstl:if>
                     <li class="main-list__item main-list__popup main-list__headline">
                         <div class="main-list__col main-list__long-id main-list__popup-id main-list__popup-headline-id">
-                            berth place
+                            <fmt:message key="passenger.routes.berthPlace"/>
                         </div>
-                        <div class="main-list__col main-list__short-price">price</div>
+                        <div class="main-list__col main-list__short-price"><fmt:message key="orders.price"/></div>
                         <div class="main-list__col main-list__long-id main-list__popup-id main-list__popup-headline-id">
-                            coupe place
+                            <fmt:message key="passenger.routes.coupePlace"/>
                         </div>
-                        <div class="main-list__col main-list__short-price">price</div>
+                        <div class="main-list__col main-list__short-price"><fmt:message key="orders.price"/></div>
                         <div class="main-list__col main-list__long-id main-list__popup-id main-list__popup-headline-id">
-                            deluxe place
+                            <fmt:message key="passenger.routes.deluxePlace"/>
                         </div>
-                        <div class="main-list__col main-list__short-price">price</div>
+                        <div class="main-list__col main-list__short-price"><fmt:message key="orders.price"/></div>
                     </li>
                     <jstl:forEach items="${trains}" var="train">
                         <li class="main-list__item main-list__popup main-list__popup-last">
@@ -117,7 +119,7 @@
                                 <input type="hidden" name="placeNum" value="${train.berthNum}">
                                 <input type="hidden" name="placeType" value="berth"/>
                                 <input type="hidden" name="price" value="${requestScope.berthPrice}">
-                                <button class="bg-button main-list__popup-button">order</button>
+                                <button class="bg-button main-list__popup-button"><fmt:message key="order"/></button>
                             </form>
                             <div class="main-list__col main-list__long-id main-list__popup-id"><jstl:out
                                     value="${train.coupeNum}"/></div>
@@ -128,7 +130,7 @@
                                 <input type="hidden" name="placeNum" value="${train.coupeNum}">
                                 <input type="hidden" name="placeType" value="coupe"/>
                                 <input type="hidden" name="price" value="${requestScope.coupePrice}">
-                                <button class="bg-button main-list__popup-button">order</button>
+                                <button class="bg-button main-list__popup-button"><fmt:message key="order"/></button>
                             </form>
                             <div class="main-list__col main-list__long-id main-list__popup-id"><jstl:out
                                     value="${train.deluxeNum}"/></div>
@@ -139,7 +141,7 @@
                                 <input type="hidden" name="placeNum" value="${train.deluxeNum}">
                                 <input type="hidden" name="placeType" value="deluxe"/>
                                 <input type="hidden" name="price" value="${requestScope.deluxePrice}">
-                                <button class="bg-button main-list__popup-button">order</button>
+                                <button class="bg-button main-list__popup-button"><fmt:message key="order"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -171,7 +173,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

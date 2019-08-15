@@ -225,8 +225,8 @@
         <option value="Enum" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -263,9 +263,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\EpamFinalProject\src\main\webapp\resources" />
       <recent name="C:\EpamFinalProject\src\main\webapp" />
       <recent name="C:\EpamFinalProject\src\main\webapp\resources\img" />
-      <recent name="C:\EpamFinalProject\src\main\webapp\resources" />
       <recent name="C:\EpamFinalProject\src\main\webapp\WEB-INF" />
       <recent name="C:\EpamFinalProject\src\main\resources" />
     </key>
@@ -391,7 +391,8 @@
       <workItem from="1565769331194" duration="1107000" />
       <workItem from="1565784401689" duration="11426000" />
       <workItem from="1565863785859" duration="6427000" />
-      <workItem from="1565875812143" duration="6908000" />
+      <workItem from="1565875812143" duration="7546000" />
+      <workItem from="1565885898901" duration="18591000" />
     </task>
     <servers />
   </component>

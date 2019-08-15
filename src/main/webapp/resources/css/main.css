@@ -35,13 +35,14 @@
   height: 21px;
   margin-left: 12px;
   cursor: pointer; }
-  .header__languages-item:first-child {
+
+.header__languages-item:first-child {
     margin-left: 0; }
 
 .header__languages-img {
-  width: 100%;
-  height: 100%; }
-
+  width: 21px;
+  height: 21px;
+}
 .text-button {
   background-color: transparent;
   border: 0;
@@ -575,4 +576,13 @@
 
 .header__register-form {
   margin-bottom: 0;
+}
+
+.header__languages-form {
+  margin-bottom: 0;
+}
+
+.header__languages-button {
+  padding: 0;
+  margin: 0;
 }

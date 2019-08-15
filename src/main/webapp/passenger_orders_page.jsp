@@ -2,6 +2,8 @@
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored ="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,7 +24,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <div class="col-auto header__account-bar">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </div>
             </div>
         </div>
@@ -35,17 +37,17 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 orders__title">Orders list</h2>
+                <h2 class="h2 orders__title"><fmt:message key="admin.orders.ordersList"/></h2>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <ul class="main-list orders__list">
                     <li class="main-list__item main-list__headline tours__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__long-id">train id</div>
-                        <div class="main-list__col main-list__name">place type</div>
-                        <div class="main-list__col main-list__short-price">price</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="orders.id"/></div>
+                        <div class="main-list__col main-list__long-id"><fmt:message key="trains.id"/></div>
+                        <div class="main-list__col main-list__name"><fmt:message key="orders.placeType"/></div>
+                        <div class="main-list__col main-list__short-price"><fmt:message key="orders.price"/></div>
                     </li>
                     <jstl:forEach items="${passengerOrders}" var="order">
                         <li class="main-list__item tours__item">
@@ -53,10 +55,9 @@
                             <div class="main-list__col main-list__long-id"><jstl:out value="${order.trainId}"/></div>
                             <div class="main-list__col main-list__name"><jstl:out value="${order.placeType}"/></div>
                             <div class="main-list__col main-list__short-price"><jstl:out value="${order.price}"/></div>
-                                <button class="bg-button main-list__delete">print</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="passenger.receipt.print"/></button>
                         </li>
                     </jstl:forEach>
-
                 </ul>
             </div>
             <div class="col-12">
@@ -85,7 +86,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

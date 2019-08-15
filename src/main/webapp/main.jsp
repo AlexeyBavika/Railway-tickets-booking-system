@@ -23,9 +23,33 @@
                 <div class="header__logo">RTB inc.</div>
             </div>
             <div class="col-auto header__account-bar">
-                <button class="text-button header__login">Login</button>
+                <ul class="header__languages">
+                    <li class="header__languages-item">
+                        <form method="post" action="controller?action=main" class="header__languages-form">
+                            <input type="hidden" name="language" value="ua">
+                            <button class="text-button header__languages-button">
+                                <img src="resources/img/ukraine.svg" alt="" class="header__languages-img">
+                            </button>
+                        </form>
+                    <li class="header__languages-item">
+                        <form method="post" action="controller?action=main" class="header__languages-form">
+                            <input type="hidden" name="language" value="ru">
+                            <button class="text-button header__languages-button">
+                                <img src="resources/img/russia.svg" alt="" class="header__languages-img">
+                            </button>
+                        </form>
+                    </li>
+                    <li class="header__languages-item">
+                        <form method="post" action="controller?action=main" class="header__languages-form">
+                            <input type="hidden" name="language" value="en">
+                            <button class="text-button header__languages-button">
+                                <img src="resources/img/united-kingdom.svg" alt="" class="header__languages-img">
+                            </button>
+                        </form>
+                </ul>
+                <button class="text-button header__login"><fmt:message key="main.login"/></button>
                 <form method="post" action="register.jsp" class="header__register-form">
-                    <button class="border-button header__register">Register</button>
+                    <button class="border-button header__register"><fmt:message key="main.register"/></button>
                 </form>
             </div>
         </div>
@@ -36,11 +60,11 @@
     <div class="container welcome__container">
         <div class="row justify-content-center">
             <div class="col-10">
-                <h1 class="h1 welcome__title">Search for railway tickets</h1>
+                <h1 class="h1 welcome__title"><fmt:message key="main.SearchForRailwayTickets"/></h1>
             </div>
             <div class="col-auto">
                 <form method="post" action="register.jsp">
-                    <button class="border-button welcome__register">Start you journey</button>
+                    <button class="border-button welcome__register"><fmt:message key="main.StartYourJourney"/></button>
                 </form>
             </div>
         </div>
@@ -52,15 +76,15 @@
         <input type="text" name="email" id="" class="main-input login-popup__input" placeholder="email">
         <input type="password" name="password" id="" class="main-input login-popup__input" placeholder="password">
         <jstl:if test="${not empty requestScope.wrongLoginOrPassword}">
-            <div class="form-error login-popup__error">Wrong login or password</div>
+            <div class="form-error login-popup__error"><fmt:message key="main.wrongLoginOrPassword"/></div>
         </jstl:if>
-        <input type="submit" value="Sign in" class="bg-button login-popup__button">
+        <button class="bg-button login-popup__button"><fmt:message key="main.signIn"/></button>
     </form>
 </main>
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="main.allRightsReserved"/></small>
         </div>
     </div>
 </footer>

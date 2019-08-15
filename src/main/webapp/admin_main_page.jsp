@@ -1,12 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alexey
-  Date: 31.07.2019
-  Time: 23:31
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored ="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -27,7 +23,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -37,26 +33,26 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="h2 admin__title">Welcome to admin page</h2>
+                <h2 class="h2 admin__title"><fmt:message key="admin.WelcomeToAdminPage"/></h2>
             </div>
             <div class="col-12">
                 <form method="post" action="controller?action=getAllUsers">
-                    <button class="bg-button admin__button">users</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.users"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllTrains">
-                    <button class="bg-button admin__button">trains</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.trains"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllRoutes">
-                    <button class="bg-button admin__button">routes</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.routes"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllPrices">
-                    <button class="bg-button admin__button">prices</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.prices"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllOrders">
-                    <button class="bg-button admin__button">orders</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.orders"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllChangeRoleRequests">
-                    <button class="bg-button admin__button">Change roles requests</button>
+                    <button class="bg-button admin__button"><fmt:message key="admin.changeRoleRequests"/></button>
                 </form>
             </div>
         </div>
@@ -65,7 +61,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

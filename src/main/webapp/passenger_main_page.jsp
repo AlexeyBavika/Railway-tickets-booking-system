@@ -2,6 +2,8 @@
 <%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="${bundle}"/>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -22,11 +24,11 @@
             </div>
             <div class="col-auto header__account-bar">
                 <button class="border-button header__callback">
-                    <div class="header__callback-text">Get a callback</div>
+                    <div class="header__callback-text"><fmt:message key="passenger.MainPage.getACollBack"/></div>
                     <div class="header__callback-phone"><jstl:out value="${sessionScope.getPhone}"/></div>
                 </button>
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -36,18 +38,18 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="h1 main__title">Booking railway tickets</h1>
+                <h1 class="h1 main__title"><fmt:message key="passenger.MainPage.welcomeToPassengerMainPage"/></h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-start">
             <div class="col-6">
                 <form method="post" action="controller?action=passengerGetRoutes">
-                    <button class="main__routes-button">Routes</button>
+                    <button class="main__routes-button"><fmt:message key="admin.routes"/></button>
                 </form>
             </div>
             <div class="col-2">
                 <form method="post" action="controller?action=passengerOrders">
-                    <button class="main__tickets-button">My tickets</button>
+                    <button class="main__tickets-button"><fmt:message key="passenger.MainPage.myTickets"/></button>
                 </form>
             </div>
         </div>
@@ -60,7 +62,7 @@
                            placeholder="destination station">
                 </div>
                 <div class="col-8">
-                    <button class="bg-button main__search-button">Search</button>
+                    <button class="bg-button main__search-button"><fmt:message key="search"/></button>
                 </div>
             </form>
         </div>
@@ -69,14 +71,14 @@
                 <form method="post" action="controller?action=sendRoleChangeRequest">
                     <input type="hidden" name="passengerId" value="${sessionScope.getId}">
                     <div class="col-8">
-                        <h2 class="h2 main__request-title">Apply for admin role(300 symbols)</h2>
+                        <h2 class="h2 main__request-title"><fmt:message key="passenger.MainPage.applyForAdminRole"/></h2>
                     </div>
                     <div class="col-8">
                         <textarea name="description" id="" cols="30" rows="10" maxlength="300" resize="none"
                                   class="main__textarea"></textarea>
                     </div>
                     <div class="col-8">
-                        <button class="bg-button main__request-button">send request</button>
+                        <button class="bg-button main__request-button"><fmt:message key="passenger.MainPage.sendRequest"/></button>
                     </div>
                 </form>
             </jstl:if>
@@ -86,7 +88,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/>small>
         </div>
     </div>
 </footer>
@@ -94,42 +96,3 @@
 <script src="resources/js/main.js"></script>
 </body>
 </html>
-
-
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Title</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-
-<%--<form method="post" action="controller?action=logout">--%>
-<%--    <p><input type="submit" value="logout"></p>--%>
-<%--</form>--%>
-
-<%--<form method="post" action="controller?action=passengerGetRoutes">--%>
-<%--    <p><input type="submit" value="routes"></p>--%>
-<%--</form>--%>
-<%--<c:if test="${empty requestScope.RoleChangeRequestSend}">--%>
-<%--    <form method="post" action="controller?action=sendRoleChangeRequest">--%>
-<%--        <input type="hidden" name="passengerId" value="${sessionScope.getId}">--%>
-<%--        <p><input type="text" name="description" size="30"></p>--%>
-<%--        <p><input type="submit" value="send request" size="30"></p>--%>
-<%--    </form>--%>
-<%--</c:if>--%>
-
-
-<%--<form method="post" action="controller?action=passengerOrders">--%>
-<%--    <p><input type="submit" value="my tickets"></p>--%>
-<%--</form>--%>
-
-<%--<p>where you want to go ?</p>--%>
-<%--<form method="post" action="controller?action=findRoute">--%>
-<%--    <p>departure station</p>--%>
-<%--    <p><input type="text" name="departureStation"></p>--%>
-<%--    <p>destination station</p>--%>
-<%--    <p><input type="text" name="destinationStation"></p>--%>
-<%--    <p><input type="submit" value="find route"></p>--%>
-<%--</form>--%>
-
-<%--</body>--%>
-<%--</html>--%>

@@ -25,7 +25,7 @@
             </div>
             <div class="col-auto header__account-bar">
                 <form method="post" action="controller?action=logout">
-                    <button class="text-button header__login">logout</button>
+                    <button class="text-button header__login"><fmt:message key="logout"/></button>
                 </form>
             </div>
         </div>
@@ -38,7 +38,7 @@
         </form>
         <div class="row">
             <div class="col">
-                <h2 class="h2 users__title">Users list</h2>
+                <h2 class="h2 users__title"><fmt:message key="admin.users.UsersList"/></h2>
             </div>
         </div>
         <div class="row">
@@ -48,12 +48,12 @@
                 </jstl:if>
                 <ul class="main-list users__list">
                     <li class="main-list__item main-list__headline users__item">
-                        <div class="main-list__col main-list__id">id</div>
-                        <div class="main-list__col main-list__name">name</div>
-                        <div class="main-list__col main-list__surname">surname</div>
-                        <div class="main-list__col main-list__email">email</div>
-                        <div class="main-list__col main-list__phone">phone</div>
-                        <div class="main-list__col main-list__phone">role id</div>
+                        <div class="main-list__col main-list__id"><fmt:message key="users.id"/></div>
+                        <div class="main-list__col main-list__name"><fmt:message key="users.name"/></div>
+                        <div class="main-list__col main-list__surname"><fmt:message key="users.surname"/></div>
+                        <div class="main-list__col main-list__email"><fmt:message key="users.email"/></div>
+                        <div class="main-list__col main-list__phone"><fmt:message key="users.phone"/></div>
+                        <div class="main-list__col main-list__phone"><fmt:message key="users.roleId"/></div>
                     </li>
                     <jstl:forEach items="${users}" var="user">
                         <li class="main-list__item users__item">
@@ -66,7 +66,7 @@
                             <form method="post" action="controller?action=deleteUser">
                                 <input type="hidden" name="userToDelete" value="${user.id}">
                                 <input type="hidden" name="userToDeleteRoleId" value="${user.roleId}">
-                                <button class="bg-button main-list__delete">delete</button>
+                                <button class="bg-button main-list__delete"><fmt:message key="delete"/></button>
                             </form>
                         </li>
                     </jstl:forEach>
@@ -98,7 +98,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br>All rights reserved</small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>
