@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94">
-        <schema name="railway_ticket_booking_system" object-types="index, constraint, view, table, function, column, dataset trigger, procedure" />
+        <schema name="railway_ticket_booking_system" object-types="table, dataset trigger, constraint, index, column" />
       </connection>
     </loaded-nodes>
   </component>

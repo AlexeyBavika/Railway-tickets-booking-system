@@ -1,23 +1,24 @@
 package controller.command;
 
-import controller.admin.AdminBackToMainPageCommand;
-import controller.admin.change_role_request.DeleteChangeRoleRequestCommand;
-import controller.admin.change_role_request.GetAllChangeRoleRequestsCommand;
-import controller.admin.change_role_request.UpdateRoleCommand;
-import controller.admin.order.DeleteOrderCommand;
-import controller.admin.order.GetAllOrdersCommand;
-import controller.admin.price.CreatePriceCommand;
-import controller.admin.price.GetAllPricesCommand;
-import controller.admin.routes.CreateRouteCommand;
-import controller.admin.routes.DeleteRouteCommand;
-import controller.admin.routes.GetAllRoutesCommand;
-import controller.admin.train.CreateTrainCommand;
-import controller.admin.train.DeleteTrainCommand;
-import controller.admin.train.GetAllTrainsCommand;
-import controller.admin.user.DeleteUserCommand;
-import controller.admin.user.GetAllUsersCommand;
-import controller.common.*;
-import controller.passenger.*;
+import controller.admin_command.AdminBackToMainPageCommand;
+import controller.admin_command.change_role_request.DeleteChangeRoleRequestCommand;
+import controller.admin_command.change_role_request.GetAllChangeRoleRequestsCommand;
+import controller.admin_command.change_role_request.UpdateRoleCommand;
+import controller.admin_command.order.DeleteOrderCommand;
+import controller.admin_command.order.GetAllOrdersCommand;
+import controller.admin_command.price.CreatePriceCommand;
+import controller.admin_command.price.DeletePriceCommand;
+import controller.admin_command.price.GetAllPricesCommand;
+import controller.admin_command.routes.CreateRouteCommand;
+import controller.admin_command.routes.DeleteRouteCommand;
+import controller.admin_command.routes.GetAllRoutesCommand;
+import controller.admin_command.train.CreateTrainCommand;
+import controller.admin_command.train.DeleteTrainCommand;
+import controller.admin_command.train.GetAllTrainsCommand;
+import controller.admin_command.user.DeleteUserCommand;
+import controller.admin_command.user.GetAllUsersCommand;
+import controller.common_command.*;
+import controller.passenger_command.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -43,7 +44,6 @@ public class CommandFactory {
         commands.put("login", new LoginCommand());
         commands.put("logout", new LogoutCommand());
         commands.put("backToMainPage", new BackToMainPageCommand());
-        commands.put("sendRoleChangeRequest", new SendRoleChangeRequestCommand());
 
         //passenger commands
         commands.put("passengerBackToMainPage", new PassengerBackToMainPageCommand());
@@ -53,6 +53,8 @@ public class CommandFactory {
         commands.put("chooseTrain", new ChooseTrainCommand());
         commands.put("makeOrder", new MakeOrderCommand());
         commands.put("passengerOrders", new PassengerGetAllOrdersCommand());
+
+        commands.put("sendRoleChangeRequest", new SendRoleChangeRequestCommand());
 
         //admin commands
         commands.put("adminBackToMainPage", new AdminBackToMainPageCommand());
@@ -77,6 +79,7 @@ public class CommandFactory {
 
         commands.put("createPrice", new CreatePriceCommand());
         commands.put("getAllPrices", new GetAllPricesCommand());
+        commands.put("deletePrice", new DeletePriceCommand());
     }
 
     public Command getCommand(HttpServletRequest request) {

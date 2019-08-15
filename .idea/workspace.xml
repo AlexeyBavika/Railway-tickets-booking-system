@@ -2,97 +2,194 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="595b9baf-2aff-4514-a45b-515dee8fa68e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/railway_tickets_booking_system_database.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/train/DeleteTrainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/train/DeleteTrainCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/user/DeleteUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/admin/user/DeleteUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/AdminBackToMainPageCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/change_role_request/DeleteChangeRoleRequestCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/change_role_request/GetAllChangeRoleRequestsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/change_role_request/UpdateRoleCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/order/DeleteOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/order/GetAllOrdersCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/price/CreatePriceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/price/DeletePriceCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/price/GetAllPricesCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/routes/CreateRouteCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/routes/DeleteRouteCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/routes/GetAllRoutesCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/train/CreateTrainCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/train/DeleteTrainCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/train/GetAllTrainsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/user/DeleteUserCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/admin/user/GetAllUsersCommand.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/command/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/command/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/ChooseTrainCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/passenger/ChooseTrainCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/MakeOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/passenger/MakeOrderCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/AbstractDAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/DAOFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/Database.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/OrderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/PriceDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RoleDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/RouteDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/TrainDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/dao_interfaces/UserDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLDAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLDAOFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLOrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLOrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLPriceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLPriceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRoleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRoleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/common/BackToMainPageCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/common/LoginCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/common/LogoutCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/common/MainCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/common/RegisterCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/ChooseTrainCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/MakeOrderCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/PassengerBackToMainPageCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/PassengerGetAllOrdersCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/PassengerGetAllRoutes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/PassengerGetConcreteRoutesCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/passenger/SendRoleChangeRequestCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLChangeRoleRequestDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLChangeRoleRequestDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRouteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLRouteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLTrainDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLTrainDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/MainAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/MainAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/PassengerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/PassengerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/RegisterService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/UpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/UpdateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/service/ValidationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/service/ValidationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/validation/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/validation.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/validation.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_change_role_requests_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_change_role_requests_page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_main_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_main_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_orders_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_orders_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_prices_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_prices_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_routes_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_routes_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_trains_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_trains_page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin_users_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin_users_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main_admin_page.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_choose_train_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_choose_train_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/error.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_choose_train_page.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_main_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_main_page.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_receipt_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_receipt_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_orders_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_orders_page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/passenger_routes_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/passenger_routes_page.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/train/DeleteTrainCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/admin/train/DeleteTrainCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/user/DeleteUserCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/admin/user/DeleteUserCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/CommonCommandUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/ChooseTrainCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/passenger/ChooseTrainCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/MakeOrderCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/passenger/MakeOrderCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/AbstractDAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/DAOFactory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/Database.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/OrderDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/PriceDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RoleDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/RouteDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/TrainDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao_interfaces/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLDAOFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLDAOFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLOrderDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLOrderDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLPriceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLPriceDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRoleDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRoleDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRouteDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRouteDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLTrainDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLTrainDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/LoginService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/MainAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/MainAdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/PassengerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/PassengerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/RegisterService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/service/UpdateService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/service/UpdateService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/EpamFinalProject.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/RailwayTicketsBookingSystem.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/AdminBackToMainPageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/change_role_request/DeleteChangeRoleRequestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/change_role_request/GetAllChangeRoleRequestsCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/change_role_request/UpdateRoleCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/order/DeleteOrderCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/order/GetAllOrdersCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/price/CreatePriceCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/price/DeletePriceCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/price/GetAllPricesCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/routes/CreateRouteCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/routes/DeleteRouteCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/routes/GetAllRoutesCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/train/CreateTrainCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/train/DeleteTrainCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/train/GetAllTrainsCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/user/DeleteUserCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/admin/user/GetAllUsersCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/Command.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/command/CommandFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/BackToMainPageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/LoginCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/LogoutCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/MainCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/common/RegisterCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/filters/LocalizationFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/main_admin/DeleteAdminCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/main_admin/GetAllAdminsCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/ChooseTrainCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/MakeOrderCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/PassengerBackToMainPageCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/PassengerGetAllOrdersCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/PassengerGetAllRoutes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/PassengerGetConcreteRoutesCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/passenger/SendRoleChangeRequestCommand.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/servlet_controller/ServletController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/connection/ConnectionPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/AbstractDAOFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/AbstractDAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/ChangeRoleRequestDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/DAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/OrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/PriceDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/RoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/RouteDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/TrainDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/dao/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLChangeRoleRequestDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLDAOFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLOrderDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLPriceDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRoleDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLRouteDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLTrainDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/dao/mysql_dao_implementation/MySQLUserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/ChangeRoleRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/PlaceType$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/PlaceType$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/PlaceType$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/PlaceType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Price.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Route.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/Train.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/MainAdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/PassengerService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/RegisterService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/service/UpdateService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-09" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-09" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/conf/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-07-31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-01" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-03" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-05" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-06" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-07" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-08" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-09" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2019-08-13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fchange_005frole_005frequests_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fchange_005frole_005frequests_005fpage_jsp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fmain_005fpage_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005forders_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005forders_005fpage_jsp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005froutes_005fpage_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005ftrains_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005ftrains_005fpage_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/admin_005fusers_005fpage_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/index_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/common/login_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/common/login_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/common/register_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/common/register_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/main_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/jsp/main_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/login_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_005fadmin_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_005fadmin_005fpage_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/main_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fbooking_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fbooking_005fpage_jsp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fchoose_005ftrain_005fpage_jsp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005fmain_005fpage_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005forders_005fpage_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005forders_005fpage_jsp.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005freceipt_005fpage_jsp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/_/org/apache/jsp/passenger_005froutes_005fpage_jsp.java" afterDir="false" />
@@ -128,8 +225,8 @@
         <option value="Enum" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -151,10 +248,12 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowRun.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/p" />
+    <property name="last.edited.regexp" value="+380685940328" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../s/bes" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -164,11 +263,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\EpamFinalProject\src\main\resources" />
-      <recent name="C:\EpamFinalProject\src\main\resources\logs" />
       <recent name="C:\EpamFinalProject\src\main\webapp" />
-      <recent name="C:\EpamFinalProject\src\main\webapp\jsp\common" />
-      <recent name="C:\EpamFinalProject\src\main\webapp\jsp\user" />
+      <recent name="C:\EpamFinalProject\src\main\webapp\resources\img" />
+      <recent name="C:\EpamFinalProject\src\main\webapp\resources" />
+      <recent name="C:\EpamFinalProject\src\main\webapp\WEB-INF" />
+      <recent name="C:\EpamFinalProject\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -222,7 +321,7 @@
       </MavenSettings>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="LaunchBrowser.Before.Run" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" url="http://localhost:8080/index.html" />
+        <option name="LaunchBrowser.Before.Run" browser="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" url="http://localhost:8080/" />
       </method>
     </configuration>
     <list>
@@ -289,7 +388,10 @@
       <workItem from="1565684972333" duration="7388000" />
       <workItem from="1565696615635" duration="978000" />
       <workItem from="1565706090006" duration="5248000" />
-      <workItem from="1565769331194" duration="641000" />
+      <workItem from="1565769331194" duration="1107000" />
+      <workItem from="1565784401689" duration="11426000" />
+      <workItem from="1565863785859" duration="6427000" />
+      <workItem from="1565875812143" duration="6908000" />
     </task>
     <servers />
   </component>

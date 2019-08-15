@@ -39,7 +39,7 @@ public class MySQLRouteDAO implements RouteDAO {
     @Override
     public void deleteRoute(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM routes WHERE route.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM routes WHERE routes.id = ?")) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
