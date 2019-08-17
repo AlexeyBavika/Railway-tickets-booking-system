@@ -8,7 +8,6 @@ public interface UserDAO {
     User createUser(User user);
     void deleteUser(int id);
     List<User> getAllUsers();
-    User findUserById(int id);
     void updateUserRole(int id, int roleId);
     List<String> getAllEmails();
     List<String> getAllPhones();

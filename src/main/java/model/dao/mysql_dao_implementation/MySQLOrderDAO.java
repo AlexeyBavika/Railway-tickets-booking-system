@@ -3,6 +3,7 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.OrderDAO;
 import model.entity.Order;
+import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -34,7 +35,7 @@ public class MySQLOrderDAO implements OrderDAO {
         } catch (SQLException e) {
             String errorText = "can't create order";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -47,7 +48,7 @@ public class MySQLOrderDAO implements OrderDAO {
         } catch (SQLException e) {
             String errorText = "can't delete order";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -70,7 +71,7 @@ public class MySQLOrderDAO implements OrderDAO {
         } catch (SQLException e) {
             String errorText = "can't get all orders";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return orders;
     }
@@ -95,7 +96,7 @@ public class MySQLOrderDAO implements OrderDAO {
         } catch (SQLException e) {
             String errorText = "can't get all orders by id";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return orders;
     }

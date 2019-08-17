@@ -2,6 +2,7 @@ package controller.common_command;
 
 import controller.command.Command;
 import model.entity.User;
+import model.exception.DAOException;
 import model.service.LoginService;
 
 import javax.servlet.http.HttpServletRequest;

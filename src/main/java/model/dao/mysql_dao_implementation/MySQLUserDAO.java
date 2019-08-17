@@ -3,6 +3,7 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.UserDAO;
 import model.entity.User;
+import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -36,7 +37,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't create user";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return user;
     }
@@ -50,7 +51,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't delete user";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -74,29 +75,9 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get all users";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return users;
-    }
-
-    @Override
-    public User findUserById(int id) {
-        User user = null;
-        try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE users.id = ?")) {
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            String name = resultSet.getString("name");
-            String surname = resultSet.getString("surname");
-            String email = resultSet.getString("email");
-            String password = resultSet.getString("password");
-            String phone = resultSet.getString("phone");
-            int roleId = resultSet.getInt("role_id");
-            user = new User(name, surname, email, password, phone, roleId);
-        } catch (SQLException e) {
-
-        }
-        return user;
     }
 
     @Override
@@ -109,7 +90,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't update user role";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -126,7 +107,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get all emails";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return emails;
     }
@@ -144,7 +125,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get all phones";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return phones;
     }
@@ -162,7 +143,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get user role id";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return userRoleId;
     }
@@ -190,7 +171,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get user";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return user;
     }
@@ -215,6 +196,7 @@ public class MySQLUserDAO implements UserDAO {
         } catch (SQLException e) {
             String errorText = "can't get all admins";
             LOGGER.error(errorText);
+            throw new DAOException(errorText, e);
         }
         return admins;
     }

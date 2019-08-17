@@ -12,6 +12,6 @@ public class UpdateRoleCommand implements Command {
         int passengerId = Integer.parseInt(request.getParameter("passengerId"));
         int roleId = Integer.parseInt(request.getParameter("passengerNewRoleId"));
         AdminService.getInstance().updateUserRole(passengerId, roleId);
-        return "admin_change_role_requests_page.jsp";
+        return "controller?action=getAllChangeRoleRequests";
     }
 }

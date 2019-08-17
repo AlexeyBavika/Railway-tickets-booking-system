@@ -84,7 +84,7 @@
 <footer class="container-fluid footer">
     <div class="container">
         <div class="row justify-content-center">
-            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="main.allRightsReserved"/></small>
+            <small class="footer__copyright">&copy 2019 Alexey Bavyka<br><fmt:message key="allRightsReserved"/></small>
         </div>
     </div>
 </footer>

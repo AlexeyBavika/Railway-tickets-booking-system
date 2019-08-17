@@ -41,7 +41,6 @@ public class LoginService {
             case 3:
                 page = "passenger_main_page.jsp";
                 break;
-            default: // error
         }
         HttpSession session = request.getSession();
         session.setAttribute("getId", user.getId());
@@ -49,6 +48,7 @@ public class LoginService {
         session.setAttribute("getSurname", user.getSurname());
         session.setAttribute("getEmail", user.getEmail());
         session.setAttribute("getPhone", user.getPhone());
+        session.setAttribute("getRoleId", user.getRoleId());
         return page;
     }
 }

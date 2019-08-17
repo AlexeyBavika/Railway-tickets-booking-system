@@ -3,6 +3,7 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.PriceDAO;
 import model.entity.Price;
+import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -34,7 +35,7 @@ public class MySQLPriceDAO implements PriceDAO {
         } catch (SQLException e) {
             String errorText = "can't create price";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -47,7 +48,7 @@ public class MySQLPriceDAO implements PriceDAO {
         } catch (SQLException e) {
             String errorText = "can't delete price";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -70,7 +71,7 @@ public class MySQLPriceDAO implements PriceDAO {
         } catch (SQLException e) {
             String errorText = "can't get all prices";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return prices;
     }
@@ -93,7 +94,7 @@ public class MySQLPriceDAO implements PriceDAO {
         } catch (SQLException e) {
             String errorText = "can't get price by route id";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return price;
     }

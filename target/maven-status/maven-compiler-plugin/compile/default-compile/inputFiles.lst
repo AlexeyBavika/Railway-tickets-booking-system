@@ -24,6 +24,7 @@ C:\EpamFinalProject\src\main\java\controller\servlet_controller\ServletControlle
 C:\EpamFinalProject\src\main\java\controller\common_command\LogoutCommand.java
 C:\EpamFinalProject\src\main\java\controller\common_command\RegisterCommand.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLPriceDAO.java
+C:\EpamFinalProject\src\main\java\controller\filters\EncodingFilter.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLRoleDAO.java
 C:\EpamFinalProject\src\main\java\controller\common_command\BackToMainPageCommand.java
 C:\EpamFinalProject\src\main\java\controller\passenger_command\PassengerGetAllRoutes.java

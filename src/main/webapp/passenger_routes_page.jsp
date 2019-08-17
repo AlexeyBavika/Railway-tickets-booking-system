@@ -45,32 +45,36 @@
                 <ul class="main-list tours__list">
                     <li class="main-list__item main-list__headline tours__item">
                         <div class="main-list__col main-list__id"><fmt:message key="routes.id"/></div>
-                        <div class="main-list__col main-list__station"><fmt:message key="routes.departureStation"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message
+                                key="routes.departureStation"/></div>
                         <div class="main-list__col main-list__date"><fmt:message key="routes.departureTime"/></div>
-                        <div class="main-list__col main-list__station"><fmt:message key="routes.destinationStation"/></div>
+                        <div class="main-list__col main-list__station"><fmt:message
+                                key="routes.destinationStation"/></div>
                         <div class="main-list__col main-list__date"><fmt:message key="routes.destinationTime"/></div>
                     </li>
-                    <%--    <jstl:if test="${not empty requestScope.routes}">--%>
-                    <jstl:forEach items="${routes}" var="route">
-                        <li class="main-list__item tours__item">
-                            <div class="main-list__col main-list__station"><jstl:out
-                                    value="${route.departureStation}"/></div>
-                            <div class="main-list__col main-list__date"><jstl:out value="${route.departureTime}"/></div>
-                            <div class="main-list__col main-list__station"><jstl:out
-                                    value="${route.departureStation}"/></div>
-                            <div class="main-list__col main-list__date"><jstl:out
-                                    value="${route.destinationTime}"/></div>
-                            <form method="post" action="controller?action=chooseTrain">
-                                <input type="hidden" name="id" value="${route.id}">
-                                <input type="hidden" name="routeDepartureStation" value="${route.departureStation}">
-                                <input type="hidden" name="routeDepartureTime" value="${route.departureTime}">
-                                <input type="hidden" name="routeDestinationStation" value="${route.destinationStation}">
-                                <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
-                                <button class="bg-button main-list__delete"><fmt:message key="passenger.routes.chooseTrain"/></button>
-                            </form>
-                        </li>
-                    </jstl:forEach>
-                    <%--    </jstl:if>--%>
+                    <jstl:if test="${empty requestScope.concreteRoutes}">
+                        <jstl:forEach items="${routes}" var="route">
+                            <li class="main-list__item tours__item">
+                                <div class="main-list__col main-list__station"><jstl:out
+                                        value="${route.departureStation}"/></div>
+                                <div class="main-list__col main-list__date"><jstl:out value="${route.departureTime}"/></div>
+                                <div class="main-list__col main-list__station"><jstl:out
+                                        value="${route.destinationStation}"/></div>
+                                <div class="main-list__col main-list__date"><jstl:out
+                                        value="${route.destinationTime}"/></div>
+                                <form method="post" action="controller?action=chooseTrain">
+                                    <input type="hidden" name="id" value="${route.id}">
+                                    <input type="hidden" name="routeDepartureStation" value="${route.departureStation}">
+                                    <input type="hidden" name="routeDepartureTime" value="${route.departureTime}">
+                                    <input type="hidden" name="routeDestinationStation" value="${route.destinationStation}">
+                                    <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
+                                    <button class="bg-button main-list__delete"><fmt:message
+                                            key="passenger.routes.chooseTrain"/></button>
+                                </form>
+                            </li>
+                        </jstl:forEach>
+                    </jstl:if>
+
                     <jstl:if test="${not empty requestScope.concreteRoutes}">
                         <jstl:forEach items="${concreteRoutes}" var="route">
                             <li class="main-list__item tours__item">
@@ -79,7 +83,7 @@
                                 <div class="main-list__col main-list__date"><jstl:out
                                         value="${route.departureTime}"/></div>
                                 <div class="main-list__col main-list__station"><jstl:out
-                                        value="${route.departureStation}"/></div>
+                                        value="${route.destinationStation}"/></div>
                                 <div class="main-list__col main-list__date"><jstl:out
                                         value="${route.destinationTime}"/></div>
                                 <form method="post" action="controller?action=chooseTrain">
@@ -89,7 +93,8 @@
                                     <input type="hidden" name="routeDestinationStation"
                                            value="${route.destinationStation}">
                                     <input type="hidden" name="routeDestinationTime" value="${route.destinationTime}">
-                                    <button class="bg-button main-list__delete"><fmt:message key="passenger.routes.chooseTrain"/></button>
+                                    <button class="bg-button main-list__delete"><fmt:message
+                                            key="passenger.routes.chooseTrain"/></button>
                                 </form>
                             </li>
                         </jstl:forEach>

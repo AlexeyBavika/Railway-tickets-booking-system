@@ -29,6 +29,7 @@ controller\admin_command\price\CreatePriceCommand.class
 controller\admin_command\price\DeletePriceCommand.class
 model\dao\dao\AbstractDAOFactory$1.class
 controller\command\CommandFactory.class
+controller\filters\EncodingFilter.class
 model\service\LoginService.class
 controller\admin_command\train\GetAllTrainsCommand.class
 controller\admin_command\change_role_request\UpdateRoleCommand.class

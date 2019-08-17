@@ -25,21 +25,21 @@ public class ValidationService {
 
     public static boolean isUANameValid(String firstName) {
         if (firstName == null){return false;}
-        Pattern p = Pattern.compile(getProperty("user.uaname"), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(getProperty("user.uaname"));
         Matcher m = p.matcher(firstName);
         return m.matches();
     }
 
     public static boolean isRUNameValid(String firstName) {
         if (firstName == null){return false;}
-        Pattern p = Pattern.compile(getProperty("user.runame"), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(getProperty("user.runame"), Pattern.UNICODE_CASE);
         Matcher m = p.matcher(firstName);
         return m.matches();
     }
 
     public static boolean isENNameValid(String firstName) {
         if (firstName == null){return false;}
-        Pattern p = Pattern.compile(getProperty("user.enname"), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(getProperty("user.enname"));
         Matcher m = p.matcher(firstName);
         return m.matches();
     }
@@ -53,14 +53,14 @@ public class ValidationService {
 
     public static boolean isEmailValid(String email) {
         if (email == null){return false;}
-        Pattern p = Pattern.compile(getProperty("user.email"), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(getProperty("user.email"));
         Matcher m = p.matcher(email);
         return m.matches();
     }
 
     public static boolean isPhoneValid(String phone) {
         if (phone == null){return false;}
-        Pattern p = Pattern.compile(getProperty("user.phone"), Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
+        Pattern p = Pattern.compile(getProperty("user.phone"));
         Matcher m = p.matcher(phone);
         return m.matches();
     }

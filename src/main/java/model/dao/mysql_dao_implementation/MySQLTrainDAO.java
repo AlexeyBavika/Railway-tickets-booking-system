@@ -3,6 +3,7 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.TrainDAO;
 import model.entity.Train;
+import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -34,7 +35,7 @@ public class MySQLTrainDAO implements TrainDAO {
         } catch (SQLException e) {
             String errorText = "can't create train";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return train;
     }
@@ -48,7 +49,7 @@ public class MySQLTrainDAO implements TrainDAO {
         } catch (SQLException e) {
             String errorText = "can't delete train";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -70,29 +71,9 @@ public class MySQLTrainDAO implements TrainDAO {
         } catch (SQLException e) {
             String errorText = "can't get all trains";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return trains;
-    }
-
-    @Override
-    public Train getTrainById(int id) {
-        Train train = null;
-        try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM trains WHERE train.id = ?")) {
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            int routeId = resultSet.getInt("route_id");
-            int berthNum = resultSet.getInt("berth_num");
-            int coupeNum = resultSet.getInt("coupe_num");
-            int deluxeNum = resultSet.getInt("deluxe_num");
-            train = new Train(routeId, berthNum, coupeNum, deluxeNum);
-        } catch (SQLException e) {
-            String errorText = "can't get train by id";
-            LOGGER.error(errorText);
-            e.printStackTrace();
-        }
-        return train;
     }
 
     @Override
@@ -115,23 +96,9 @@ public class MySQLTrainDAO implements TrainDAO {
         } catch (SQLException e) {
             String errorText = "can't get trains by route id";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return trains;
-    }
-
-    @Override
-    public void updateTrainRoute(int trainId, int newRouteId) {
-        try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE trains SET trains.route_id = ? WHERE trains.id = ?")) {
-            preparedStatement.setInt(1, newRouteId);
-            preparedStatement.setInt(2, trainId);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            String errorText = "can't update train route";
-            LOGGER.error(errorText);
-            e.printStackTrace();
-        }
     }
 
     @Override
@@ -144,18 +111,18 @@ public class MySQLTrainDAO implements TrainDAO {
         } catch (SQLException e) {
             String errorText = "can't update train placenum";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
     private String checkPlaceType(String placeType) {
         String placeTypeToChange = null;
         switch (placeType) {
-            case "berth" :
+            case "berth":
                 return placeTypeToChange = "UPDATE trains SET trains.berth_num = ? WHERE trains.id = ?";
-            case "coupe" :
+            case "coupe":
                 return placeTypeToChange = "UPDATE trains SET trains.coupe_num = ? WHERE trains.id = ?";
-            case "deluxe" :
+            case "deluxe":
                 return placeTypeToChange = "UPDATE trains SET trains.deluxe_num = ? WHERE trains.id = ?";
         }
         return placeTypeToChange;

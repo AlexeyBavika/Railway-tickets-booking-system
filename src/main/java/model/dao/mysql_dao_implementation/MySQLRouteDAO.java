@@ -3,6 +3,7 @@ package model.dao.mysql_dao_implementation;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.RouteDAO;
 import model.entity.Route;
+import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -31,7 +32,7 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't create route";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return route;
     }
@@ -45,7 +46,7 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't delete route";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
     }
 
@@ -67,7 +68,7 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't get all routes";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return routes;
     }
@@ -87,7 +88,7 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't get route by id";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return route;
     }
@@ -112,7 +113,7 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't get routes from date";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return routes;
     }
@@ -122,7 +123,7 @@ public class MySQLRouteDAO implements RouteDAO {
         List<Route> routes = new ArrayList<>();
         Route route = null;
         try(Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_station = ? AND destination_station = ?")) {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_station = ? AND routes.destination_station = ?")) {
             preparedStatement.setString(1, departureStation);
             preparedStatement.setString(2, destinationStation);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -136,12 +137,9 @@ public class MySQLRouteDAO implements RouteDAO {
         } catch (SQLException e) {
             String errorText = "can't get routes by concrete stations";
             LOGGER.error(errorText);
-            e.printStackTrace();
+            throw new DAOException(errorText, e);
         }
         return routes;
     }
 
 }
-
-
-// елси маршрут нет поездов тзо недостуцпен эжжии

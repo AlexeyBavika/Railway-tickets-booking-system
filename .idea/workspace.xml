@@ -282,16 +282,82 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.tomcat">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.dao.connection.Main" />
-      <module name="EpamFinalProject" />
+  <component name="RunManager" selected="JUnit.ValidationServiceTest">
+    <configuration name="ValidationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.dao.connection.*" />
+          <option name="PATTERN" value="service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationServiceTest.isEmailValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
+      <option name="METHOD_NAME" value="isEmailValidShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationServiceTest.isNameENValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
+      <option name="METHOD_NAME" value="isNameENValidShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationServiceTest.isNameRUValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
+      <option name="METHOD_NAME" value="isNameRUValidShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationServiceTest.isPhoneValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
+      <option name="METHOD_NAME" value="isPhoneValidShouldReturnTrue" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -325,12 +391,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ValidationServiceTest.isNameENValidShouldReturnTrue" />
+      <item itemvalue="JUnit.ValidationServiceTest.isNameRUValidShouldReturnTrue" />
+      <item itemvalue="JUnit.ValidationServiceTest.isEmailValidShouldReturnTrue" />
+      <item itemvalue="JUnit.ValidationServiceTest.isPhoneValidShouldReturnTrue" />
+      <item itemvalue="JUnit.ValidationServiceTest" />
       <item itemvalue="Maven.tomcat" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ValidationServiceTest" />
+        <item itemvalue="JUnit.ValidationServiceTest.isPhoneValidShouldReturnTrue" />
+        <item itemvalue="JUnit.ValidationServiceTest.isEmailValidShouldReturnTrue" />
+        <item itemvalue="JUnit.ValidationServiceTest.isNameRUValidShouldReturnTrue" />
+        <item itemvalue="JUnit.ValidationServiceTest.isNameENValidShouldReturnTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -393,6 +467,11 @@
       <workItem from="1565863785859" duration="6427000" />
       <workItem from="1565875812143" duration="7546000" />
       <workItem from="1565885898901" duration="18591000" />
+      <workItem from="1565963514745" duration="4572000" />
+      <workItem from="1565972323262" duration="697000" />
+      <workItem from="1565977272560" duration="3327000" />
+      <workItem from="1566028966104" duration="10164000" />
+      <workItem from="1566051324904" duration="1402000" />
     </task>
     <servers />
   </component>

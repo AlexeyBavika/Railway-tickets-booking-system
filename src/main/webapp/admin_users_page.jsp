@@ -44,7 +44,7 @@
         <div class="row">
             <div class="col-12">
                 <jstl:if test="${not empty requestScope.cantDeleteUser}">
-                    <jstl:out value="${requestScope.cantDeleteUser}"/>
+                    <fmt:message key="admin.users.cantDeleteUser"/>
                 </jstl:if>
                 <ul class="main-list users__list">
                     <li class="main-list__item main-list__headline users__item">
