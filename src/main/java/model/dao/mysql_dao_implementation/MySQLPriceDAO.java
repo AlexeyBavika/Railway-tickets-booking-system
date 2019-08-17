@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPriceDAO implements PriceDAO {
+    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLPriceDAO.class);
 
     private static MySQLPriceDAO instance = new MySQLPriceDAO();
@@ -53,11 +54,13 @@ public class MySQLPriceDAO implements PriceDAO {
     }
 
     @Override
-    public List<Price> getAllPrices() {
+    public List<Price> getAllPrices(int currentPage) {
+        String query = paginate(currentPage);
+
         Price price = null;
         List<Price> prices = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM prices")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int routeId = resultSet.getInt("route_id");
@@ -97,5 +100,18 @@ public class MySQLPriceDAO implements PriceDAO {
             throw new DAOException(errorText, e);
         }
         return price;
+    }
+
+    private String paginate(int currentPage) {
+        String query = "SELECT * FROM prices LIMIT ";
+        switch (currentPage) {
+            case 1:
+                query += RECORDS_PER_PAGE;
+                break;
+            default:
+                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
+                break;
+        }
+        return query;
     }
 }

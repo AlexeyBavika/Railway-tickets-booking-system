@@ -16,6 +16,7 @@ import java.util.List;
 
 public class MySQLUserDAO implements UserDAO {
     private static final Logger LOGGER = LogManager.getLogger(MySQLUserDAO.class);
+    private final int RECORDS_PER_PAGE = 10;
 
     private static MySQLUserDAO instance = new MySQLUserDAO();
 
@@ -56,10 +57,12 @@ public class MySQLUserDAO implements UserDAO {
     }
 
     @Override
-    public List<User> getAllUsers() {
+    public List<User> getAllUsers(int currentPage) {
+        String query = paginate(currentPage);
+
         List<User> users = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String name = resultSet.getString("name");
@@ -199,5 +202,18 @@ public class MySQLUserDAO implements UserDAO {
             throw new DAOException(errorText, e);
         }
         return admins;
+    }
+
+    private String paginate(int currentPage) {
+        String query = "SELECT * FROM users LIMIT ";
+        switch (currentPage) {
+            case 1:
+                query += RECORDS_PER_PAGE;
+                break;
+            default:
+                query += (currentPage-1)* RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
+                break;
+        }
+        return query;
     }
 }

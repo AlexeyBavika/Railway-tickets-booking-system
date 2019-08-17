@@ -9,3 +9,8 @@
 2019-08-16 14:46:25 ERROR MySQLTrainDAO:36 - can't create train
 2019-08-17 11:36:54 ERROR ConnectionPool:39 - can't get connection to database
 2019-08-17 11:43:21 ERROR ConnectionPool:39 - can't get connection to database
+2019-08-17 20:02:15 ERROR MySQLRouteDAO:73 - can't get all routes
+2019-08-17 20:18:33 ERROR MySQLRouteDAO:49 - can't delete route
+2019-08-17 20:18:48 ERROR MySQLRouteDAO:49 - can't delete route
+2019-08-17 20:31:03 ERROR MySQLOrderDAO:76 - can't get all orders
+2019-08-17 20:47:45 ERROR MySQLRouteDAO:120 - can't get routes from date

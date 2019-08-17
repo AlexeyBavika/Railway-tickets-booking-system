@@ -27,9 +27,9 @@ public class PassengerService {
         return instance;
     }
 
-    public List<Route> getAvailableRoutes(Date date) {
+    public List<Route> getAvailableRoutes(Date date, int currentPage) {
         long time = date.getTime();
-        return factory.createRouteDAO().getRoutesFromDate(new java.sql.Date(time));
+        return factory.createRouteDAO().getRoutesFromDate(new java.sql.Date(time), currentPage);
     }
 
     public List<Route> getConcreteRoutes(String departureStation, String destinationStation) {
@@ -48,8 +48,8 @@ public class PassengerService {
         factory.createChangeRoleRequestDAO().createChangeRoleRequest(passengerId, text);
     }
 
-    public List<Order> getAllOrders(int passengerId) {
-        return factory.createOrderDAO().getAllOrdersById(passengerId);
+    public List<Order> getAllOrders(int passengerId, int currentPage) {
+        return factory.createOrderDAO().getAllOrdersById(passengerId, currentPage);
     }
 
 }

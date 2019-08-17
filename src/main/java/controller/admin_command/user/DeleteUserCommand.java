@@ -11,17 +11,23 @@ public class DeleteUserCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        int id = Integer.parseInt(request.getParameter("userToDelete"));
+        int userToDeleteId = Integer.parseInt(request.getParameter("userToDelete"));
         int userRoleId = Integer.parseInt(request.getParameter("userToDeleteRoleId"));
         int adminRole = (int) session.getAttribute("getRoleId");
         if(adminRole == 2) {
             if(userRoleId == 3) {
-                AdminService.getInstance().deleteUser(id);
+                AdminService.getInstance().deleteUser(userToDeleteId);
             } else {
                 request.setAttribute("cantDeleteUser", "cant delete user coz no rights");
             }
-        } else {
-            AdminService.getInstance().deleteUser(id);
+        }
+
+        if(adminRole == 1 && userToDeleteId == 1) {
+            request.setAttribute("cantDeleteUser", "cant delete user coz no rights");
+        }
+
+        if(adminRole == 1) {
+            AdminService.getInstance().deleteUser(userToDeleteId);
         }
         return "controller?action=getAllUsers";
     }

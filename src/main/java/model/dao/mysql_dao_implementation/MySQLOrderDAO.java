@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLOrderDAO implements OrderDAO {
+    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLOrderDAO.class);
 
     private static MySQLOrderDAO instance = new MySQLOrderDAO();
@@ -53,11 +54,13 @@ public class MySQLOrderDAO implements OrderDAO {
     }
 
     @Override
-    public List<Order> getAllOrders() {
+    public List<Order> getAllOrders(int currentPage) {
+        String query = paginate(currentPage);
+
         Order order = null;
         List<Order> orders = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM orders")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int passengerId = resultSet.getInt("passenger_id");
@@ -77,11 +80,14 @@ public class MySQLOrderDAO implements OrderDAO {
     }
 
     @Override
-    public List<Order> getAllOrdersById(int passengerId) {
+    public List<Order> getAllOrdersById(int passengerId, int currentPage) {
+        String query = paginate(currentPage);
+        query = query.substring(26);
+
         Order order = null;
         List<Order> orders = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM orders WHERE orders.passenger_id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM orders WHERE orders.passenger_id = ? LIMIT" + query)) {
             preparedStatement.setInt(1, passengerId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -99,5 +105,18 @@ public class MySQLOrderDAO implements OrderDAO {
             throw new DAOException(errorText, e);
         }
         return orders;
+    }
+
+    private String paginate(int currentPage) {
+        String query = "SELECT * FROM orders LIMIT ";
+        switch (currentPage) {
+            case 1:
+                query += RECORDS_PER_PAGE;
+                break;
+            default:
+                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
+                break;
+        }
+        return query;
     }
 }

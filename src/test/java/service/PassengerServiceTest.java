@@ -20,7 +20,7 @@ public class PassengerServiceTest {
 
     @Test
     public void getAvailableRoutesShouldBeNotEmpty() {
-        List<Route> availableRoutes = PassengerService.getInstance().getAvailableRoutes(new Date());
+        List<Route> availableRoutes = PassengerService.getInstance().getAvailableRoutes(new Date(), 1);
         assertFalse(availableRoutes.isEmpty());
     }
 

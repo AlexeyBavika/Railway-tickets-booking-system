@@ -14,8 +14,20 @@ public class PassengerGetAllOrdersCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         int passengerId = (int) session.getAttribute("getId");
-        List<Order> orders = PassengerService.getInstance().getAllOrders(passengerId);
+        List<Order> orders = PassengerService.getInstance().getAllOrders(passengerId, getCurrentPage(request));
         request.setAttribute("passengerOrders", orders);
         return "passenger_orders_page.jsp";
+    }
+
+    private int getCurrentPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        int currentPage;
+
+        if(page == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(page);
+        }
+        return currentPage;
     }
 }

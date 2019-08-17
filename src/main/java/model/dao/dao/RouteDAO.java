@@ -8,8 +8,8 @@ import java.util.List;
 public interface RouteDAO {
     Route createRoute(Route route);
     void deleteRoute(int id);
-    List<Route> getAllRoutes();
+    List<Route> getAllRoutes(int currentPage);
     Route getRouteById(int id);
-    List<Route> getRoutesFromDate(Date date);
+    List<Route> getRoutesFromDate(Date date, int currentPage);
     List<Route> getRoutesByConcreteStations(String departureStation, String destinationStation);
 }

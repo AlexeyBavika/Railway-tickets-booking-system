@@ -11,8 +11,20 @@ import java.util.List;
 public class GetAllUsersCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        List<User> users = AdminService.getInstance().getAllUsers();
+        List<User> users = AdminService.getInstance().getAllUsers(getCurrentPage(request));
         request.setAttribute("users", users);
         return "admin_users_page.jsp";
+    }
+
+    private int getCurrentPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        int currentPage;
+
+        if(page == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(page);
+        }
+        return currentPage;
     }
 }

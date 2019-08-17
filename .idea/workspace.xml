@@ -282,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ValidationServiceTest">
+  <component name="RunManager" selected="Maven.tomcat">
     <configuration name="ValidationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RailwayTicketsBookingSystem" />
       <extension name="coverage">
@@ -472,6 +472,7 @@
       <workItem from="1565977272560" duration="3327000" />
       <workItem from="1566028966104" duration="10164000" />
       <workItem from="1566051324904" duration="1402000" />
+      <workItem from="1566053903431" duration="9556000" />
     </task>
     <servers />
   </component>

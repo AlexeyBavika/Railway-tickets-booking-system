@@ -11,8 +11,20 @@ import java.util.List;
 public class GetAllOrdersCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        List<Order> orders = AdminService.getInstance().getAllOrders();
+        List<Order> orders = AdminService.getInstance().getAllOrders(getCurrentPage(request));
         request.setAttribute("orders", orders);
         return "admin_orders_page.jsp";
+    }
+
+    private int getCurrentPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        int currentPage;
+
+        if(page == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(page);
+        }
+        return currentPage;
     }
 }

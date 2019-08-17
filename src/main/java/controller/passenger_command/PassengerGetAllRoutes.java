@@ -13,9 +13,21 @@ import java.util.List;
 public class PassengerGetAllRoutes implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        List<Route> routes = PassengerService.getInstance().getAvailableRoutes(new Date());
+        List<Route> routes = PassengerService.getInstance().getAvailableRoutes(new Date(), getCurrentPage(request));
         HttpSession session = request.getSession();
         session.setAttribute("routes", routes);
         return "passenger_routes_page.jsp";
+    }
+
+    private int getCurrentPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        int currentPage;
+
+        if(page == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(page);
+        }
+        return currentPage;
     }
 }

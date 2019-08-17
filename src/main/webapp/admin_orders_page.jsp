@@ -68,10 +68,16 @@
             <div class="col-12">
                 <ul class="pagination orders__pagination">
                     <li class="pagination__item">
-                        <button class="pagination__button">1</button>
+                        <form method="post" action="controller?action=getAllOrders">
+                            <input type="hidden" name="page" value="1">
+                            <button class="pagination__button">1</button>
+                        </form>
                     </li>
                     <li class="pagination__item">
-                        <button class="pagination__button">2</button>
+                        <form method="post" action="controller?action=getAllOrders">
+                            <input type="hidden" name="page" value="2">
+                            <button class="pagination__button">2</button>
+                        </form>
                     </li>
                     <li class="pagination__item">
                         <button class="pagination__button">3</button>

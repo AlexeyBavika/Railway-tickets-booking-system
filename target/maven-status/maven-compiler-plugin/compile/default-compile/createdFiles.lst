@@ -6,9 +6,7 @@ model\service\RegisterService.class
 controller\passenger_command\PassengerGetConcreteRoutesCommand.class
 controller\admin_command\user\DeleteUserCommand.class
 model\dao\dao\Database.class
-model\dao\mysql_dao_implementation\MySQLRoleDAO.class
 model\entity\Role.class
-model\dao\dao\RoleDAO.class
 controller\admin_command\AdminBackToMainPageCommand.class
 controller\admin_command\change_role_request\GetAllChangeRoleRequestsCommand.class
 model\entity\PlaceType$2.class
@@ -58,7 +56,6 @@ controller\admin_command\routes\DeleteRouteCommand.class
 controller\passenger_command\PassengerBackToMainPageCommand.class
 controller\admin_command\order\DeleteOrderCommand.class
 model\service\AdminService.class
-model\service\MainAdminService.class
 controller\passenger_command\ChooseTrainCommand.class
 controller\passenger_command\PassengerGetAllRoutes.class
 controller\passenger_command\PassengerGetAllOrdersCommand.class

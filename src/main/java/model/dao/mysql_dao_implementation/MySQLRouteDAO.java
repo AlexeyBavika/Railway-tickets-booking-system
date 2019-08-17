@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLRouteDAO implements RouteDAO {
+    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLRouteDAO.class);
 
     private static MySQLRouteDAO instance = new MySQLRouteDAO();
@@ -51,10 +52,12 @@ public class MySQLRouteDAO implements RouteDAO {
     }
 
     @Override
-    public List<Route> getAllRoutes() {
+    public List<Route> getAllRoutes(int currentPage) {
+        String query = paginate(currentPage);
+
         List<Route> routes = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 String departureStation = resultSet.getString("departure_station");
@@ -94,11 +97,14 @@ public class MySQLRouteDAO implements RouteDAO {
     }
 
     @Override
-    public List<Route> getRoutesFromDate(Date date) {
+    public List<Route> getRoutesFromDate(Date date, int currentPage) {
+        String query = paginate(currentPage);
+        query = query.substring(26);
+
         List<Route> routes = new ArrayList<>();
         Route route = null;
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_time > ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_time > ? LIMIT" + query)) {
             preparedStatement.setDate(1, date);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
@@ -140,6 +146,19 @@ public class MySQLRouteDAO implements RouteDAO {
             throw new DAOException(errorText, e);
         }
         return routes;
+    }
+
+    private String paginate(int currentPage) {
+        String query = "SELECT * FROM routes LIMIT ";
+        switch (currentPage) {
+            case 1:
+                query += RECORDS_PER_PAGE;
+                break;
+            default:
+                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
+                break;
+        }
+        return query;
     }
 
 }

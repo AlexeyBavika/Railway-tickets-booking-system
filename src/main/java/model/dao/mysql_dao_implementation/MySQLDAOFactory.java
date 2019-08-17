@@ -19,11 +19,6 @@ public class MySQLDAOFactory implements DAOFactory {
     }
 
     @Override
-    public RoleDAO createRoleDAO() {
-        return MySQLRoleDAO.getInstance();
-    }
-
-    @Override
     public PriceDAO createPriceDAO() {
         return MySQLPriceDAO.getInstance();
     }

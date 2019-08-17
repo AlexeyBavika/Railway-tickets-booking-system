@@ -11,8 +11,20 @@ import java.util.List;
 public class GetAllRoutesCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        List<Route> routes = AdminService.getInstance().getAllRoutes();
+        List<Route> routes = AdminService.getInstance().getAllRoutes(getCurrentPage(request));
         request.setAttribute("routes", routes);
         return "admin_routes_page.jsp";
+    }
+
+    private int getCurrentPage(HttpServletRequest request) {
+        String page = request.getParameter("page");
+        int currentPage;
+
+        if(page == null) {
+            currentPage = 1;
+        } else {
+            currentPage = Integer.parseInt(page);
+        }
+        return currentPage;
     }
 }

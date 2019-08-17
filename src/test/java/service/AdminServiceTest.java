@@ -1,12 +1,7 @@
 package service;
 
-import model.entity.Route;
 import model.service.AdminService;
-import model.service.PassengerService;
 import org.junit.Test;
-
-import java.util.Date;
-import java.util.List;
 
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.TestCase.assertNotNull;
@@ -21,27 +16,27 @@ public class AdminServiceTest {
 
     @Test
     public void getAllUsersShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllUsers().isEmpty());
+        assertFalse(AdminService.getInstance().getAllUsers(1).isEmpty());
     }
 
     @Test
     public void getAllTrainShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllTrains().isEmpty());
+        assertFalse(AdminService.getInstance().getAllTrains(1).isEmpty());
     }
 
     @Test
     public void getAllPricesShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllPrices().isEmpty());
+        assertFalse(AdminService.getInstance().getAllPrices(1).isEmpty());
     }
 
     @Test
     public void getAllOrdersShouldBeEmpty() {
-        assertTrue(AdminService.getInstance().getAllOrders().isEmpty());
+        assertTrue(AdminService.getInstance().getAllOrders(1).isEmpty());
     }
 
     @Test
     public void getAllChangeRoleRequestsShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllChangeRoleRequests().isEmpty());
+        assertFalse(AdminService.getInstance().getAllChangeRoleRequests(1).isEmpty());
     }
 
 }

@@ -7,6 +7,7 @@ C:\EpamFinalProject\src\main\java\controller\admin_command\routes\GetAllRoutesCo
 C:\EpamFinalProject\src\main\java\model\dao\dao\Database.java
 C:\EpamFinalProject\src\main\java\model\dao\dao\AbstractDAOFactory.java
 C:\EpamFinalProject\src\main\java\model\dao\dao\PriceDAO.java
+C:\EpamFinalProject\src\main\java\model\exception\DAOException.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\routes\DeleteRouteCommand.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\train\DeleteTrainCommand.java
 C:\EpamFinalProject\src\main\java\model\entity\Train.java
@@ -16,7 +17,6 @@ C:\EpamFinalProject\src\main\java\model\entity\PlaceType.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\train\GetAllTrainsCommand.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLRouteDAO.java
 C:\EpamFinalProject\src\main\java\controller\passenger_command\PassengerGetConcreteRoutesCommand.java
-C:\EpamFinalProject\src\main\java\model\dao\dao\RoleDAO.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLUserDAO.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\AdminBackToMainPageCommand.java
 C:\EpamFinalProject\src\main\java\controller\command\Command.java
@@ -25,7 +25,6 @@ C:\EpamFinalProject\src\main\java\controller\common_command\LogoutCommand.java
 C:\EpamFinalProject\src\main\java\controller\common_command\RegisterCommand.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLPriceDAO.java
 C:\EpamFinalProject\src\main\java\controller\filters\EncodingFilter.java
-C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLRoleDAO.java
 C:\EpamFinalProject\src\main\java\controller\common_command\BackToMainPageCommand.java
 C:\EpamFinalProject\src\main\java\controller\passenger_command\PassengerGetAllRoutes.java
 C:\EpamFinalProject\src\main\java\model\service\RegisterService.java
@@ -40,7 +39,6 @@ C:\EpamFinalProject\src\main\java\model\dao\dao\DAOFactory.java
 C:\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLDAOFactory.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\order\GetAllOrdersCommand.java
 C:\EpamFinalProject\src\main\java\controller\passenger_command\SendRoleChangeRequestCommand.java
-C:\EpamFinalProject\src\main\java\model\service\MainAdminService.java
 C:\EpamFinalProject\src\main\java\controller\admin_command\change_role_request\UpdateRoleCommand.java
 C:\EpamFinalProject\src\main\java\model\entity\Price.java
 C:\EpamFinalProject\src\main\java\controller\passenger_command\PassengerGetAllOrdersCommand.java

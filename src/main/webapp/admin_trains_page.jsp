@@ -81,8 +81,18 @@
             </div>
             <div class="col-12">
                 <ul class="pagination tours__pagination">
-                    <li class="pagination__item"><button class="pagination__button">1</button></li>
-                    <li class="pagination__item"><button class="pagination__button">2</button></li>
+                    <li class="pagination__item">
+                            <form method="post" action="controller?action=getAllTrains">
+                                <input type="hidden" name="page" value="1">
+                                <button class="pagination__button">1</button>
+                            </form>
+                    </li>
+                    <li class="pagination__item">
+                        <form method="post" action="controller?action=getAllTrains">
+                            <input type="hidden" name="page" value="2">
+                            <button class="pagination__button">2</button>
+                        </form>
+                    </li>
                     <li class="pagination__item"><button class="pagination__button">3</button></li>
                     <li class="pagination__item"><button class="pagination__button">4</button></li>
                     <li class="pagination__dots">...</li>

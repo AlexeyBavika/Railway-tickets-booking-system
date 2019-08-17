@@ -37,21 +37,27 @@
             </div>
             <div class="col-12">
                 <form method="post" action="controller?action=getAllUsers">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.users"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllTrains">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.trains"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllRoutes">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.routes"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllPrices">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.prices"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllOrders">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.orders"/></button>
                 </form>
                 <form method="post" action="controller?action=getAllChangeRoleRequests">
+                    <input type="hidden" name="page" value="1">
                     <button class="bg-button admin__button"><fmt:message key="admin.changeRoleRequests"/></button>
                 </form>
             </div>

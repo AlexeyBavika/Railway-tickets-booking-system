@@ -26,8 +26,8 @@ public class AdminService {
         return instance;
     }
 
-    public List<User> getAllUsers() {
-        return factory.createUserDAO().getAllUsers();
+    public List<User> getAllUsers(int currentPage) {
+        return factory.createUserDAO().getAllUsers(currentPage);
     }
 
     public void deleteUser(int id) {
@@ -42,8 +42,8 @@ public class AdminService {
         factory.createTrainDAO().createTrain(train);
     }
 
-    public List<Train> getAllTrains() {
-        return factory.createTrainDAO().getAllTrains();
+    public List<Train> getAllTrains(int currentPage) {
+        return factory.createTrainDAO().getAllTrains(currentPage);
     }
 
     public void deleteTrain(int id) {
@@ -54,8 +54,8 @@ public class AdminService {
         factory.createRouteDAO().createRoute(route);
     }
 
-    public List<Route> getAllRoutes() {
-        return factory.createRouteDAO().getAllRoutes();
+    public List<Route> getAllRoutes(int currentPage) {
+        return factory.createRouteDAO().getAllRoutes(currentPage);
     }
 
     public void deleteRoute(int id) {
@@ -66,8 +66,8 @@ public class AdminService {
         factory.createOrderDAO().createOrder(passengerId, trainId, placeType, price);
     }
 
-    public List<Order> getAllOrders() {
-        return factory.createOrderDAO().getAllOrders();
+    public List<Order> getAllOrders(int currentPage) {
+        return factory.createOrderDAO().getAllOrders(currentPage);
     }
 
     public void deleteOrder(int id) {
@@ -78,16 +78,16 @@ public class AdminService {
         factory.createPriceDAO().createPrice(price);
     }
 
-    public List<Price> getAllPrices() {
-        return factory.createPriceDAO().getAllPrices();
+    public List<Price> getAllPrices(int currentPage) {
+        return factory.createPriceDAO().getAllPrices(currentPage);
     }
 
     public void deletePrice(int priceId) {
         factory.createPriceDAO().deletePrice(priceId);
     }
 
-    public List<ChangeRoleRequest> getAllChangeRoleRequests() {
-        return factory.createChangeRoleRequestDAO().getAllChangeRoleRequests();
+    public List<ChangeRoleRequest> getAllChangeRoleRequests(int currentPage) {
+        return factory.createChangeRoleRequestDAO().getAllChangeRoleRequests(currentPage);
     }
 
     public void deleteChangeRoleRequest(int id) {
