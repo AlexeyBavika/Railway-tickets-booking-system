@@ -24,6 +24,9 @@ public class MySQLOrderDAO implements OrderDAO {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createOrder(int passengerId, int trainId, String placeType, int price) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -40,6 +43,9 @@ public class MySQLOrderDAO implements OrderDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteOrder(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -53,6 +59,9 @@ public class MySQLOrderDAO implements OrderDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Order> getAllOrders(int currentPage) {
         String query = paginate(currentPage);
@@ -79,6 +88,9 @@ public class MySQLOrderDAO implements OrderDAO {
         return orders;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Order> getAllOrdersById(int passengerId, int currentPage) {
         String query = paginate(currentPage);

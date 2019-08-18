@@ -27,10 +27,22 @@ public class LoginService {
         return instance;
     }
 
+    /**
+     * checks if user with given email and password exists
+     * @param email
+     * @param password
+     * @return user
+     */
     public User loginUser(String email, String password) {
         return factory.createUserDAO().getUser(email, password);
     }
 
+    /**
+     * checks user role and after that returns page
+     * @param user
+     * @param request
+     * @return main page of user
+     */
     public String checkRole(User user, HttpServletRequest request) {
         String page = null;
         switch (factory.createUserDAO().getUserRoleId(user)) {

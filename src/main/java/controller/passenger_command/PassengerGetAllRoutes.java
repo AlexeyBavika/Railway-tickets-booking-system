@@ -11,6 +11,12 @@ import java.util.Date;
 import java.util.List;
 
 public class PassengerGetAllRoutes implements Command {
+    /**
+     * return all routes
+     * @param request
+     * @param response
+     * @return routes
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         List<Route> routes = PassengerService.getInstance().getAvailableRoutes(new Date(), getCurrentPage(request));

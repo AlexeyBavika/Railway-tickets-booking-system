@@ -21,6 +21,9 @@ public class MySQLRouteDAO implements RouteDAO {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Route createRoute(Route route) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -38,6 +41,9 @@ public class MySQLRouteDAO implements RouteDAO {
         return route;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteRoute(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -51,6 +57,9 @@ public class MySQLRouteDAO implements RouteDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Route> getAllRoutes(int currentPage) {
         String query = paginate(currentPage);
@@ -76,6 +85,9 @@ public class MySQLRouteDAO implements RouteDAO {
         return routes;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Route getRouteById(int id) {
         Route route = null;
@@ -96,6 +108,9 @@ public class MySQLRouteDAO implements RouteDAO {
         return route;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Route> getRoutesFromDate(Date date, int currentPage) {
         String query = paginate(currentPage);
@@ -124,6 +139,9 @@ public class MySQLRouteDAO implements RouteDAO {
         return routes;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Route> getRoutesByConcreteStations(String departureStation, String destinationStation) {
         List<Route> routes = new ArrayList<>();

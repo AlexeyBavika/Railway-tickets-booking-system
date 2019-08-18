@@ -9,10 +9,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MakeOrderCommand implements Command {
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int trainId = Integer.parseInt(request.getParameter("trainId"));
         int placeNum = Integer.parseInt(request.getParameter("placeNum")) - 1;
+        if(placeNum == -1) {
+            request.setAttribute("cantOrder", "no places");
+            return "passenger_routes_page.jsp";
+        }
         String placeType = request.getParameter("placeType");
         UpdateService.getInstance().updateTrainPlaceNum(trainId, placeNum, placeType);
 

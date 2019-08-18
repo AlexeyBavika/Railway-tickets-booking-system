@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DeleteTrainCommand implements Command {
+    /**
+     * removes train from database
+     * @param request
+     * @param response
+     * @return list of trains
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("trainToDelete"));

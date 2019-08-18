@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CreateTrainCommand implements Command {
+    /**
+     * creates train
+     * @param request
+     * @param response
+     * @return list of trains
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int routeId = Integer.parseInt(request.getParameter("routeId"));

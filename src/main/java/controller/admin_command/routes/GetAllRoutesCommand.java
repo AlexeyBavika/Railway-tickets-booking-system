@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class GetAllRoutesCommand implements Command {
+    /**
+     * gets all routes
+     * @param request
+     * @param response
+     * @return list of routes
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         List<Route> routes = AdminService.getInstance().getAllRoutes(getCurrentPage(request));

@@ -14,3 +14,7 @@
 2019-08-17 20:18:48 ERROR MySQLRouteDAO:49 - can't delete route
 2019-08-17 20:31:03 ERROR MySQLOrderDAO:76 - can't get all orders
 2019-08-17 20:47:45 ERROR MySQLRouteDAO:120 - can't get routes from date
+2019-08-17 21:26:36 ERROR MySQLRouteDAO:49 - can't delete route
+2019-08-18 19:22:02 ERROR MySQLTrainDAO:40 - can't create train
+2019-08-18 19:28:06 ERROR MySQLRouteDAO:49 - can't delete route
+2019-08-18 19:28:20 ERROR MySQLRouteDAO:49 - can't delete route

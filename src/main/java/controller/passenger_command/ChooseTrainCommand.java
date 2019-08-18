@@ -11,6 +11,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class ChooseTrainCommand implements Command {
+    /**
+     * returns all available trains for current route
+     * @param request
+     * @param response
+     * @return trains
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int routeId = Integer.parseInt(request.getParameter("id"));

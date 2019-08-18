@@ -24,6 +24,9 @@ public class MySQLPriceDAO implements PriceDAO {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createPrice(Price price) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -40,6 +43,9 @@ public class MySQLPriceDAO implements PriceDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deletePrice(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -53,6 +59,9 @@ public class MySQLPriceDAO implements PriceDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Price> getAllPrices(int currentPage) {
         String query = paginate(currentPage);
@@ -79,6 +88,9 @@ public class MySQLPriceDAO implements PriceDAO {
         return prices;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Price getPriceByRouteId(int routeId) {
         Price price = null;

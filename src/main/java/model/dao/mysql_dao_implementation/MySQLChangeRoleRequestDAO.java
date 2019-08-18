@@ -23,6 +23,9 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void createChangeRoleRequest(int passengerId, String text) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -37,6 +40,9 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<ChangeRoleRequest> getAllChangeRoleRequests(int currentPage) {
         String query = paginate(currentPage);
@@ -61,6 +67,9 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
         return changeRoleRequests;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteChangeRoleRequest(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();

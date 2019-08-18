@@ -7,6 +7,7 @@ controller\passenger_command\PassengerGetConcreteRoutesCommand.class
 controller\admin_command\user\DeleteUserCommand.class
 model\dao\dao\Database.class
 model\entity\Role.class
+model\exception\DAOException.class
 controller\admin_command\AdminBackToMainPageCommand.class
 controller\admin_command\change_role_request\GetAllChangeRoleRequestsCommand.class
 model\entity\PlaceType$2.class

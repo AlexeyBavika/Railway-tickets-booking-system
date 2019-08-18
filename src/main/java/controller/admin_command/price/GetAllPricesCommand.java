@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class GetAllPricesCommand implements Command {
+    /**
+     * gets all prices
+     * @param request
+     * @param response
+     * @return list of prices
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         List<Price> prices = AdminService.getInstance().getAllPrices(getCurrentPage(request));

@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class PassengerGetConcreteRoutesCommand implements Command {
+    /**
+     * returns routes that passenger chooses
+     * @param request
+     * @param response
+     * @return routes
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String departureStation = request.getParameter("departureStation");

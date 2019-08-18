@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class GetAllTrainsCommand implements Command {
+    /**
+     * gets all trains
+     * @param request
+     * @param response
+     * @return list of trains
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         List<Train> trains = AdminService.getInstance().getAllTrains(getCurrentPage(request));

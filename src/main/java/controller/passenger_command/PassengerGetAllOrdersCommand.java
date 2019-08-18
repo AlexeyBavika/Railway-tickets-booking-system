@@ -10,6 +10,12 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class PassengerGetAllOrdersCommand implements Command {
+    /**
+     * return all passenger's tickets
+     * @param request
+     * @param response
+     * @return tickets
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();

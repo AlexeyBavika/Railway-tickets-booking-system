@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 public class MainCommand implements Command {
+    /**
+     * returns main page with given locale
+     * @param request
+     * @param response
+     * @return main page
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String language = request.getParameter("language");

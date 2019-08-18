@@ -38,6 +38,9 @@
         <div class="row">
             <div class="col">
                 <h2 class="h2 tours__title"><fmt:message key="admin.routes.routesList"/></h2>
+                <jstl:if test="${not empty requestScope.cantOrder}">
+                    <fmt:message key="passenger.routes.cantOrderNoPlaces"/>
+                </jstl:if>
             </div>
         </div>
         <div class="row">

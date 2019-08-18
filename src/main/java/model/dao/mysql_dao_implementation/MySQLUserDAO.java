@@ -24,6 +24,9 @@ public class MySQLUserDAO implements UserDAO {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public User createUser(User user) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -43,6 +46,9 @@ public class MySQLUserDAO implements UserDAO {
         return user;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteUser(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -56,6 +62,9 @@ public class MySQLUserDAO implements UserDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<User> getAllUsers(int currentPage) {
         String query = paginate(currentPage);
@@ -83,6 +92,9 @@ public class MySQLUserDAO implements UserDAO {
         return users;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateUserRole(int id, int roleId) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -97,6 +109,9 @@ public class MySQLUserDAO implements UserDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<String> getAllEmails() {
         List<String> emails = new ArrayList<>();
@@ -115,6 +130,9 @@ public class MySQLUserDAO implements UserDAO {
         return emails;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<String> getAllPhones() {
         List<String> phones = new ArrayList<>();
@@ -133,6 +151,9 @@ public class MySQLUserDAO implements UserDAO {
         return phones;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public int getUserRoleId(User user) {
         int userRoleId = 0;
@@ -151,6 +172,9 @@ public class MySQLUserDAO implements UserDAO {
         return userRoleId;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public User getUser(String email, String password) {
         User user = null;
@@ -177,31 +201,6 @@ public class MySQLUserDAO implements UserDAO {
             throw new DAOException(errorText, e);
         }
         return user;
-    }
-
-    @Override
-    public List<User> getAllAdmins() {
-        List<User> admins = new ArrayList<>();
-        try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM users WHERE users.role_id = 2")) {
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                String name = resultSet.getString("name");
-                String surname = resultSet.getString("surname");
-                String email = resultSet.getString("email");
-                String password = resultSet.getString("password");
-                String phone = resultSet.getString("phone");
-                int roleId = resultSet.getInt("role_id");
-                User user = new User(name, surname, email, password, phone, roleId);
-                user.setId(resultSet.getInt("id"));
-                admins.add(user);
-            }
-        } catch (SQLException e) {
-            String errorText = "can't get all admins";
-            LOGGER.error(errorText);
-            throw new DAOException(errorText, e);
-        }
-        return admins;
     }
 
     private String paginate(int currentPage) {

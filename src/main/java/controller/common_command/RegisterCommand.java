@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RegisterCommand implements Command {
+    /**
+     * register user if all inputs are correct
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");

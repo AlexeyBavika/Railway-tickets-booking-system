@@ -14,6 +14,10 @@ public class ConnectionPool {
     private static BasicDataSource basicDataSource = new BasicDataSource();
     private static ResourceBundle resourceBundle = ResourceBundle.getBundle("database");
 
+    /**
+        method for getting connection pool instance
+     @return connection pool instance
+     */
     public static ConnectionPool getConnectionPoolInstance() {
         if(connectionPool == null) {
             synchronized (ConnectionPool.class) {
@@ -25,6 +29,10 @@ public class ConnectionPool {
         return connectionPool;
     }
 
+    /**
+     * method for getting connection
+     * @return connection
+     */
     public static Connection getConnection() {
         basicDataSource.setUrl("jdbc:mysql://localhost:3306/Railway_ticket_booking_system?serverTimezone=UTC");
         basicDataSource.setUsername(getProperty("username"));

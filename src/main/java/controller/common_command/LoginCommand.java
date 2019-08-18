@@ -9,6 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class LoginCommand implements Command {
+    /**
+     * login user if email and password are correct
+     * if not returns main page
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String pageToRedirectUser = null;

@@ -9,6 +9,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 public class GetAllUsersCommand implements Command {
+    /**
+     * returns list of all users
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         List<User> users = AdminService.getInstance().getAllUsers(getCurrentPage(request));

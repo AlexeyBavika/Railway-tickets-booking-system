@@ -26,6 +26,9 @@ public class MySQLTrainDAO implements TrainDAO {
 
     private final int RECORDS_PER_PAGE = 10;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public Train createTrain(Train train) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -43,6 +46,9 @@ public class MySQLTrainDAO implements TrainDAO {
         return train;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteTrain(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -56,6 +62,9 @@ public class MySQLTrainDAO implements TrainDAO {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Train> getAllTrains(int currentPage) {
         String query = paginate(currentPage);
@@ -81,6 +90,9 @@ public class MySQLTrainDAO implements TrainDAO {
         return trains;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<Train> getTrainsByRouteId(int routeId) {
         Train train = null;
@@ -106,6 +118,9 @@ public class MySQLTrainDAO implements TrainDAO {
         return trains;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void updateTrainPlaceNum(int trainId, int placeNum, String placeType) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();

@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class DeleteOrderCommand implements Command {
+    /**
+     * removes order from database
+     * @param request
+     * @param response
+     * @return list of orders
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         int orderId = Integer.parseInt(request.getParameter("orderToDelete"));

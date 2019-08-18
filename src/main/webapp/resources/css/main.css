@@ -11,7 +11,7 @@
 @font-face {
   font-family: "Open Sans";
   font-weight: normal;
-  src: url("./fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
+  src: url("../fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype"); }
 
 .h1 {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
@@ -585,4 +585,39 @@
 .header__languages-button {
   padding: 0;
   margin: 0;
+}
+
+@keyframes chechnya {
+  from, to {
+    background-position-x: 0%;
+  }
+  25%, 75% {
+    background-position-x: 100%;
+  }
+  50% {
+    background-position-x: 0%;
+  }
+}
+.error {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/error-bg.jpg");
+  background-size: 110%;
+  animation: chechnya 10s infinite ease-in-out;
+}
+
+.error__title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 95%;
+  margin: 0;
+  text-align: center;
+  font-size: 56px;
+  color: #fff;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
 }

@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class CreateRouteCommand implements Command {
+    /**
+     * creates route
+     * @param request
+     * @param response
+     * @return list of routes
+     */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         String departureStation = request.getParameter("departureStation");
