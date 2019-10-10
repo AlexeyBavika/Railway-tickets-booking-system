@@ -18,3 +18,9 @@
 2019-08-18 19:22:02 ERROR MySQLTrainDAO:40 - can't create train
 2019-08-18 19:28:06 ERROR MySQLRouteDAO:49 - can't delete route
 2019-08-18 19:28:20 ERROR MySQLRouteDAO:49 - can't delete route
+2019-08-19 15:15:35 ERROR MySQLTrainDAO:43 - can't create train
+2019-08-19 15:20:47 ERROR MySQLUserDAO:60 - can't delete user
+2019-10-09 19:42:41 ERROR MySQLUserDAO:45 - can't create user
+2019-10-09 19:45:16 ERROR MySQLUserDAO:203 - can't get user
+2019-10-09 19:46:24 ERROR MySQLUserDAO:203 - can't get user
+2019-10-09 19:48:09 ERROR MySQLUserDAO:203 - can't get user

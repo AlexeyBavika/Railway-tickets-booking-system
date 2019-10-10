@@ -1,5 +1,6 @@
 package model.dao.mysql_dao_implementation;
 
+import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.RouteDAO;
 import model.entity.Route;
@@ -27,7 +28,7 @@ public class MySQLRouteDAO implements RouteDAO {
     @Override
     public Route createRoute(Route route) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO routes (departure_station, departure_time, destination_station, destination_time) VALUES (?, ?, ?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_ROUTE)) {
             preparedStatement.setString(1, route.getDepartureStation());
             preparedStatement.setString(2, route.getDepartureTime());
             preparedStatement.setString(3, route.getDestinationStation());
@@ -47,7 +48,7 @@ public class MySQLRouteDAO implements RouteDAO {
     @Override
     public void deleteRoute(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM routes WHERE routes.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_ROUTE)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -92,7 +93,7 @@ public class MySQLRouteDAO implements RouteDAO {
     public Route getRouteById(int id) {
         Route route = null;
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ROUTE_BY_ID)) {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             String departureStation = resultSet.getString("departure_station");
@@ -119,7 +120,7 @@ public class MySQLRouteDAO implements RouteDAO {
         List<Route> routes = new ArrayList<>();
         Route route = null;
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_time > ? LIMIT" + query)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ROUTES_FROM_DATE + query)) {
             preparedStatement.setDate(1, date);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
@@ -147,7 +148,7 @@ public class MySQLRouteDAO implements RouteDAO {
         List<Route> routes = new ArrayList<>();
         Route route = null;
         try(Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM routes WHERE routes.departure_station = ? AND routes.destination_station = ?")) {
+            PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ROUTES_FROM_CONCRETE_STATION)) {
             preparedStatement.setString(1, departureStation);
             preparedStatement.setString(2, destinationStation);
             ResultSet resultSet = preparedStatement.executeQuery();

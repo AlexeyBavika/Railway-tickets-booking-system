@@ -21,14 +21,14 @@ id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
 `name` VARCHAR(30) NOT NULL,
 surname VARCHAR(30) NOT NULL,
 email VARCHAR(40) UNIQUE NOT NULL,
-`password` VARCHAR(20) NOT NULL,
+`password` VARCHAR(100) NOT NULL,
 phone VARCHAR(13) UNIQUE NOT NULL,
 role_id INT NOT NULL,
 FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 
 INSERT INTO users 
-(`name`, surname, email, `password`, phone, role_id)
+(name, surname, email, password, phone, role_id)
 VALUES
 ('Alexey', 'Bavika', 'bavikaalexey@gmail.com', '123', '+380636587296', 1),
 ('Admin', 'Adminovich', 'admin@gmail.com', '123', '+380842716500', 2),
@@ -39,7 +39,10 @@ VALUES
 ('Danylo', 'Pavlenko', 'danyloPavl@gmail.com', 'cab2', '+380921658239', 3),
 ('Alfred', 'Torokhtiy', 'alfredtoroh@yandex.ru', 'sfsf', '+380981554728', 3),
 ('Alexander', 'Pushnya', 'pushnya@mail.ru', 'push', '+380127684936', 3),
-('Ivan', 'Vasilenko', 'ivas@gmail.com', 'ivasik', '+380652889003', 3);
+('Ivan', 'Vasilenko', 'ivas@gmail.com', 'ivasik', '+380652889003', 3),
+('Anton', 'Gonta', 'agonta@mail.ru', 'gggg', '+380638275918', 3),
+('Andrey', 'Gadzha', 'gadzha@yandex.ua', 'gadik', '+380936218730', 3),
+('Magomed', 'Ismailov', 'maga@gmail.com', 'supermag', '+380635829106', 3);
 
 
 CREATE TABLE routes (
@@ -55,12 +58,12 @@ INSERT INTO routes
 VALUES
 ('Kyiv', '2019-07-27 21:30:30', 'Lviv', '2019-07-28 05:07:00'),
 ('Kyiv', '2019-07-27 19:22:20', 'Moscow', '2019-07-28 21:00:00'),
-('Kharkiv', '2019-08-20 20:00:00', 'Los-Angeles', '2019-08-22 05:00:00'),
-('Moscow', '2019-08-23 20:00:00', 'Kyiv', '2019-08-24 20:00:00'),
-('Kyiv', '2019-08-24 21:00:00', 'Paris', '2019-08-25 20:00:00'),
-('Tokyo', '2019-08-24 22:00:00', 'Saint-Peterburg', '2019-08-26 05:37:00'),
-('Saint-Peterburg', '2019-08-26 07:00:00', 'Tokyo', '2019-08-27 21:39:30'),
-('Kyiv', '2019-08-25 22:30:00', 'Lviv', '2019-08-26 07:35:00');
+('Kharkiv', '2019-10-30 20:00:00', 'Riga', '2019-11-01 05:00:00'),
+('Moscow', '2019-10-30 20:00:00', 'Kyiv', '2019-11-01 20:00:00'),
+('Kyiv', '2019-11-01 21:00:00', 'Paris', '2019-11-02 20:00:00'),
+('Tokyo', '2019-11-01 22:00:00', 'Saint-Peterburg', '2019-11-02 05:37:00'),
+('Saint-Peterburg', '2019-11-01 07:00:00', 'Tokyo', '2019-11-03 21:39:30'),
+('Kyiv', '2019-12-25 22:30:00', 'Lviv', '2019-12-26 07:35:00');
 
 CREATE TABLE trains (
 id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,

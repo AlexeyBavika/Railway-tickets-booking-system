@@ -32,7 +32,7 @@ public class MySQLTrainDAO implements TrainDAO {
     @Override
     public Train createTrain(Train train) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO trains (route_id, berth_num, coupe_num, deluxe_num) VALUES (?, ?, ?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_TRAIN)) {
             preparedStatement.setInt(1, train.getRouteId());
             preparedStatement.setInt(2, train.getBerthNum());
             preparedStatement.setInt(3, train.getCoupeNum());
@@ -52,7 +52,7 @@ public class MySQLTrainDAO implements TrainDAO {
     @Override
     public void deleteTrain(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM trains WHERE trains.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_TRAIN)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class MySQLTrainDAO implements TrainDAO {
         Train train = null;
         List<Train> trains = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM trains WHERE trains.route_id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_TRAINS_BY_ROUTE_ID)) {
             preparedStatement.setInt(1, routeId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

@@ -6,6 +6,7 @@ import model.entity.User;
 import model.exception.DAOException;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,18 +31,19 @@ public class MySQLUserDAO implements UserDAO {
     @Override
     public User createUser(User user) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO users (name, surname, email, password, phone, role_id) VALUES (?, ?, ?, ?, ?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_USER)) {
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getSurname());
             preparedStatement.setString(3, user.getEmail());
-            preparedStatement.setString(4, user.getPassword());
+            String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+            preparedStatement.setString(4, hashedPassword);
             preparedStatement.setString(5, user.getPhone());
             preparedStatement.setInt(6, user.getRoleId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             String errorText = "can't create user";
             LOGGER.error(errorText);
-            throw new DAOException(errorText, e);
+            throw new DAOException(e.getMessage(), e);
         }
         return user;
     }
@@ -52,7 +54,7 @@ public class MySQLUserDAO implements UserDAO {
     @Override
     public void deleteUser(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM users WHERE users.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_USER)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -98,7 +100,7 @@ public class MySQLUserDAO implements UserDAO {
     @Override
     public void updateUserRole(int id, int roleId) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("UPDATE users SET users.role_id = ? WHERE users.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.UPDATE_USER_ROLE)) {
             preparedStatement.setInt(1, roleId);
             preparedStatement.setInt(2, id);
             preparedStatement.executeUpdate();
@@ -116,7 +118,7 @@ public class MySQLUserDAO implements UserDAO {
     public List<String> getAllEmails() {
         List<String> emails = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT email FROM users")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ALL_USER_EMAILS)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
                 String email = resultSet.getString("email");
@@ -137,7 +139,7 @@ public class MySQLUserDAO implements UserDAO {
     public List<String> getAllPhones() {
         List<String> phones = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT phone FROM users")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ALL_USER_PHONES)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()) {
                 String phone = resultSet.getString("phone");
@@ -158,7 +160,7 @@ public class MySQLUserDAO implements UserDAO {
     public int getUserRoleId(User user) {
         int userRoleId = 0;
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT role_id FROM users WHERE users.email = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_USER_ROLE_ID)) {
             preparedStatement.setString(1, user.getEmail());
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -180,19 +182,20 @@ public class MySQLUserDAO implements UserDAO {
         User user = null;
 
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, name, surname, phone, role_id FROM users WHERE users.email = ? AND users.password = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_USER)) {
             preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                String name = resultSet.getString("name");
-                String surname = resultSet.getString("surname");
-                String phone = resultSet.getString("phone");
-                int roleId = resultSet.getInt("role_id");
-                user = new User(name, surname, email, password, phone, roleId);
-                user.setId(resultSet.getInt("id"));
+                if(BCrypt.checkpw(password, resultSet.getString("password"))) {
+                    String name = resultSet.getString("name");
+                    String surname = resultSet.getString("surname");
+                    String phone = resultSet.getString("phone");
+                    int roleId = resultSet.getInt("role_id");
+                    user = new User(name, surname, email, password, phone, roleId);
+                    user.setId(resultSet.getInt("id"));
+                }
             }
 
         } catch (SQLException e) {

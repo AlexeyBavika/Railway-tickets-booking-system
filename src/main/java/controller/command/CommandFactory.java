@@ -32,8 +32,13 @@ public class CommandFactory {
 
     public static CommandFactory getInstance() {
         if(factory == null) {
-            factory = new CommandFactory();
+            synchronized (CommandFactory.class) {
+                if(factory == null) {
+                    factory = new CommandFactory();
+                }
+            }
         }
+
         return factory;
     }
 

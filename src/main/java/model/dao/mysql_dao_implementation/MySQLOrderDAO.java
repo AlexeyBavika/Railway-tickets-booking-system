@@ -1,5 +1,6 @@
 package model.dao.mysql_dao_implementation;
 
+import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.OrderDAO;
 import model.entity.Order;
@@ -30,7 +31,7 @@ public class MySQLOrderDAO implements OrderDAO {
     @Override
     public void createOrder(int passengerId, int trainId, String placeType, int price) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO orders (passenger_id, train_id, place_type, price) VALUES (?, ?, ?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_ORDER)) {
             preparedStatement.setInt(1, passengerId);
             preparedStatement.setInt(2, trainId);
             preparedStatement.setString(3, placeType);
@@ -49,7 +50,7 @@ public class MySQLOrderDAO implements OrderDAO {
     @Override
     public void deleteOrder(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM orders WHERE orders.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_ORDER)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -99,7 +100,7 @@ public class MySQLOrderDAO implements OrderDAO {
         Order order = null;
         List<Order> orders = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM orders WHERE orders.passenger_id = ? LIMIT" + query)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ALL_ORDERS_BY_ID + query)) {
             preparedStatement.setInt(1, passengerId);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {

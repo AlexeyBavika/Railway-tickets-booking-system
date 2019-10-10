@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94">
-        <schema name="railway_ticket_booking_system" object-types="table, dataset trigger, constraint, index, column" />
+        <schema name="railway_ticket_booking_system" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>
@@ -35,9 +35,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94" object-ref="schemas/railway_ticket_booking_system/tables/users" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8a8aa699-cc51-4626-b3b5-3dae5fc82f94" />

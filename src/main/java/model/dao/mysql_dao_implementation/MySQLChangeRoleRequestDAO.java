@@ -29,7 +29,7 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
     @Override
     public void createChangeRoleRequest(int passengerId, String text) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO change_role_requests (user_id, text) VALUES (?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_CHANGE_ROLE_REQUEST)) {
             preparedStatement.setInt(1, passengerId);
             preparedStatement.setString(2, text);
             preparedStatement.executeUpdate();
@@ -73,7 +73,7 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
     @Override
     public void deleteChangeRoleRequest(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM change_role_requests WHERE change_role_requests.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_CHANGE_ROLE_REQUEST)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

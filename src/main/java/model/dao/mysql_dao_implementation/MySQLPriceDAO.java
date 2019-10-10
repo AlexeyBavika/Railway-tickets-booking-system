@@ -30,7 +30,7 @@ public class MySQLPriceDAO implements PriceDAO {
     @Override
     public void createPrice(Price price) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO prices (route_id, berth_price, coupe_price, deluxe_price) VALUES (?, ?, ?, ?)")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CREATE_PRICE)) {
             preparedStatement.setInt(1, price.getRouteId());
             preparedStatement.setInt(2, price.getBerthPrice());
             preparedStatement.setInt(3, price.getCoupePrice());
@@ -49,7 +49,7 @@ public class MySQLPriceDAO implements PriceDAO {
     @Override
     public void deletePrice(int id) {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM prices WHERE prices.id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.DELETE_PRICE)) {
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -95,7 +95,7 @@ public class MySQLPriceDAO implements PriceDAO {
     public Price getPriceByRouteId(int routeId) {
         Price price = null;
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM prices WHERE prices.route_id = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_PRICE_BY_ROUTE_ID)) {
             preparedStatement.setInt(1, routeId);
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()) {
