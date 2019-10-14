@@ -4,6 +4,7 @@ import model.dao.connection.ConnectionPool;
 import model.dao.dao.UserDAO;
 import model.entity.User;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.mindrot.jbcrypt.BCrypt;
@@ -17,7 +18,6 @@ import java.util.List;
 
 public class MySQLUserDAO implements UserDAO {
     private static final Logger LOGGER = LogManager.getLogger(MySQLUserDAO.class);
-    private final int RECORDS_PER_PAGE = 10;
 
     private static MySQLUserDAO instance = new MySQLUserDAO();
 
@@ -69,7 +69,7 @@ public class MySQLUserDAO implements UserDAO {
      */
     @Override
     public List<User> getAllUsers(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "users");
 
         List<User> users = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -120,7 +120,7 @@ public class MySQLUserDAO implements UserDAO {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ALL_USER_EMAILS)) {
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 String email = resultSet.getString("email");
                 emails.add(email);
             }
@@ -141,7 +141,7 @@ public class MySQLUserDAO implements UserDAO {
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.GET_ALL_USER_PHONES)) {
             ResultSet resultSet = preparedStatement.executeQuery();
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 String phone = resultSet.getString("phone");
                 phones.add(phone);
             }
@@ -188,7 +188,7 @@ public class MySQLUserDAO implements UserDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                if(BCrypt.checkpw(password, resultSet.getString("password"))) {
+                if (BCrypt.checkpw(password, resultSet.getString("password"))) {
                     String name = resultSet.getString("name");
                     String surname = resultSet.getString("surname");
                     String phone = resultSet.getString("phone");
@@ -206,16 +206,25 @@ public class MySQLUserDAO implements UserDAO {
         return user;
     }
 
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM users LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage-1)* RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
+    @Override
+    public boolean isEmailExistsAndPhoneExists(String email, String phone) {
+        try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(MySQLQueries.CHECK_IF_EMAIL_OR_PHONE_EXISTS)) {
+            preparedStatement.setString(1, email);
+            preparedStatement.setString(2, phone);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return false;
+            }
+
+        } catch (SQLException e) {
+            String errorText = "can't get check if email or phone exists";
+            LOGGER.error(errorText);
+            throw new DAOException(e.getMessage(), e);
         }
-        return query;
+
+        return true;
     }
 }

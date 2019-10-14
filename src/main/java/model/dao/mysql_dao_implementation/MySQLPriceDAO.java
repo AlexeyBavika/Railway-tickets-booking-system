@@ -4,6 +4,7 @@ import model.dao.connection.ConnectionPool;
 import model.dao.dao.PriceDAO;
 import model.entity.Price;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLPriceDAO implements PriceDAO {
-    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLPriceDAO.class);
 
     private static MySQLPriceDAO instance = new MySQLPriceDAO();
@@ -64,7 +64,7 @@ public class MySQLPriceDAO implements PriceDAO {
      */
     @Override
     public List<Price> getAllPrices(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "prices");
 
         Price price = null;
         List<Price> prices = new ArrayList<>();
@@ -112,18 +112,5 @@ public class MySQLPriceDAO implements PriceDAO {
             throw new DAOException(errorText, e);
         }
         return price;
-    }
-
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM prices LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
-        }
-        return query;
     }
 }

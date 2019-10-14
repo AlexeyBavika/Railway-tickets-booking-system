@@ -26,25 +26,8 @@ public class RegisterService {
         return instance;
     }
 
-    // This method has to be reworked :
-    // It has to use MySQL queries to check if exists email and phone and after that return result
-    // It will work a lot faster
     public boolean checkIfExistsEmailOrPhone(String emailToCheck, String phoneToCheck) {
-        List<String> emails = factory.createUserDAO().getAllEmails();
-        List<String> phones = factory.createUserDAO().getAllPhones();
-        for (String email : emails) {
-            if (email.equals(emailToCheck)) {
-                return false;
-            }
-        }
-
-        for (String phone : phones) {
-            if (phone.equals(phoneToCheck)) {
-                return false;
-            }
-        }
-
-        return true;
+        return factory.createUserDAO().isEmailExistsAndPhoneExists(emailToCheck, phoneToCheck);
     }
 
     public void addUser(User userToCreate) {

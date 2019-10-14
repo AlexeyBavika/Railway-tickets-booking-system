@@ -8,6 +8,7 @@ public class MySQLQueries {
     static final String GET_ALL_USER_PHONES = "SELECT phone FROM users";
     static final String GET_USER_ROLE_ID = "SELECT role_id FROM users WHERE users.email = ?";
     static final String GET_USER = "SELECT id, name, surname, password, phone, role_id FROM users WHERE users.email = ?";
+    static final String CHECK_IF_EMAIL_OR_PHONE_EXISTS = "SELECT email, phone FROM users WHERE users.email = ? OR users.phone = ?";
 
     static final String CREATE_TRAIN = "INSERT INTO trains (route_id, berth_num, coupe_num, deluxe_num) VALUES (?, ?, ?, ?)";
     static final String DELETE_TRAIN = "DELETE FROM trains WHERE trains.id = ?";

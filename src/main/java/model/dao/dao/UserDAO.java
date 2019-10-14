@@ -58,4 +58,6 @@ public interface UserDAO {
      * @return
      */
     User getUser(String email, String password);
+
+    boolean isEmailExistsAndPhoneExists(String email, String phone);
 }

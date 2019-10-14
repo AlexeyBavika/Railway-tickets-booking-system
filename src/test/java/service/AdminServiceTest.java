@@ -1,42 +1,43 @@
 package service;
 
+import model.entity.User;
 import model.service.AdminService;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import static junit.framework.Assert.assertFalse;
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.*;
+import static org.mockito.Mockito.*;
 
+import org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RunWith(MockitoJUnitRunner.class)
 public class AdminServiceTest {
 
-    @Test
-    public void adminServiceInstanceShouldBeNotNull() {
-        assertNotNull(AdminService.getInstance());
+    @Mock
+    AdminService adminService;
+
+    @Before
+    public void init() {
+        adminService = spy(AdminService.getInstance());
     }
 
     @Test
-    public void getAllUsersShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllUsers(1).isEmpty());
-    }
+    public void getAllUsers() {
+        List<User> users = new ArrayList<>();
+        User user1 = new User("Alexey", "Bavyka", "bavikalexey@yabdex.ua", "123", "+380636587297", 3);
+        User user2 = new User("Alexey", "Alex", "bavikalexey@yandex.ua", "123", "+380634587297", 3);
+        users.add(user1);
+        users.add(user2);
 
-    @Test
-    public void getAllTrainShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllTrains(1).isEmpty());
-    }
-
-    @Test
-    public void getAllPricesShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllPrices(1).isEmpty());
-    }
-
-    @Test
-    public void getAllOrdersShouldBeEmpty() {
-        assertTrue(AdminService.getInstance().getAllOrders(1).isEmpty());
-    }
-
-    @Test
-    public void getAllChangeRoleRequestsShouldBeNotEmpty() {
-        assertFalse(AdminService.getInstance().getAllChangeRoleRequests(1).isEmpty());
+        when(adminService.getAllUsers(1)).thenReturn(users);
+        assertEquals(users, adminService.getAllUsers(1));
     }
 
 }

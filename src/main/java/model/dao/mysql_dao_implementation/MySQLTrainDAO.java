@@ -4,10 +4,10 @@ import model.dao.connection.ConnectionPool;
 import model.dao.dao.TrainDAO;
 import model.entity.Train;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
-import java.awt.print.Pageable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -23,8 +23,6 @@ public class MySQLTrainDAO implements TrainDAO {
     static MySQLTrainDAO getInstance() {
         return instance;
     }
-
-    private final int RECORDS_PER_PAGE = 10;
 
     /**
      * {@inheritDoc}
@@ -67,7 +65,7 @@ public class MySQLTrainDAO implements TrainDAO {
      */
     @Override
     public List<Train> getAllTrains(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "trains");
 
         List<Train> trains = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -146,18 +144,5 @@ public class MySQLTrainDAO implements TrainDAO {
                 return placeTypeToChange = "UPDATE trains SET trains.deluxe_num = ? WHERE trains.id = ?";
         }
         return placeTypeToChange;
-    }
-
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM trains LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
-        }
-        return query;
     }
 }

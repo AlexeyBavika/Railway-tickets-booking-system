@@ -24,3 +24,13 @@
 2019-10-09 19:45:16 ERROR MySQLUserDAO:203 - can't get user
 2019-10-09 19:46:24 ERROR MySQLUserDAO:203 - can't get user
 2019-10-09 19:48:09 ERROR MySQLUserDAO:203 - can't get user
+2019-10-11 19:27:10 ERROR MySQLUserDAO:44 - can't create user
+2019-10-11 19:36:05 ERROR MySQLUserDAO:44 - can't create user
+2019-10-11 19:44:19 ERROR MySQLUserDAO:229 - can't get check if email or phone exists
+2019-10-11 19:45:33 ERROR MySQLUserDAO:229 - can't get check if email or phone exists
+2019-10-11 19:47:24 ERROR MySQLUserDAO:229 - can't get check if email or phone exists
+2019-10-14 19:53:07 ERROR MySQLUserDAO:91 - can't get all users
+2019-10-14 19:54:44 ERROR MySQLUserDAO:91 - can't get all users
+2019-10-14 19:55:05 ERROR MySQLUserDAO:91 - can't get all users
+2019-10-14 19:58:23 ERROR MySQLUserDAO:91 - can't get all users
+2019-10-14 19:58:42 ERROR MySQLUserDAO:91 - can't get all users

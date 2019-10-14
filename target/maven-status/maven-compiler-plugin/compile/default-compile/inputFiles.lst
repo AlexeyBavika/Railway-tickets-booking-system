@@ -10,8 +10,10 @@ C:\Programming\EpamProjects\EpamFinalProject\src\main\java\controller\common_com
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\entity\Role.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLUserDAO.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\entity\User.java
+C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\dao\mysql_dao_implementation\MySQLQueries.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\exception\DAOException.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\entity\Price.java
+C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\service\PaginationService.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\controller\command\Command.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\dao\dao\Database.java
 C:\Programming\EpamProjects\EpamFinalProject\src\main\java\model\dao\dao\OrderDAO.java

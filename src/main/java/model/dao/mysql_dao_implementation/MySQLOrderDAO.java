@@ -1,10 +1,10 @@
 package model.dao.mysql_dao_implementation;
 
-import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.OrderDAO;
 import model.entity.Order;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLOrderDAO implements OrderDAO {
-    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLOrderDAO.class);
 
     private static MySQLOrderDAO instance = new MySQLOrderDAO();
@@ -65,7 +64,7 @@ public class MySQLOrderDAO implements OrderDAO {
      */
     @Override
     public List<Order> getAllOrders(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "orders");
 
         Order order = null;
         List<Order> orders = new ArrayList<>();
@@ -94,7 +93,7 @@ public class MySQLOrderDAO implements OrderDAO {
      */
     @Override
     public List<Order> getAllOrdersById(int passengerId, int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "orders");
         query = query.substring(26);
 
         Order order = null;
@@ -118,18 +117,5 @@ public class MySQLOrderDAO implements OrderDAO {
             throw new DAOException(errorText, e);
         }
         return orders;
-    }
-
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM orders LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
-        }
-        return query;
     }
 }

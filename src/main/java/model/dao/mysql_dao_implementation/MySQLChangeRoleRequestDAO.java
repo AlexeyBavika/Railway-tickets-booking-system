@@ -4,6 +4,7 @@ import model.dao.connection.ConnectionPool;
 import model.dao.dao.ChangeRoleRequestDAO;
 import model.entity.ChangeRoleRequest;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
-    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLChangeRoleRequestDAO.class);
     private static MySQLChangeRoleRequestDAO instance = new MySQLChangeRoleRequestDAO();
 
@@ -45,7 +45,7 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
      */
     @Override
     public List<ChangeRoleRequest> getAllChangeRoleRequests(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "change_role_requests");
 
         ChangeRoleRequest changeRoleRequest = null;
         List<ChangeRoleRequest> changeRoleRequests = new ArrayList<>();
@@ -81,18 +81,5 @@ public class MySQLChangeRoleRequestDAO implements ChangeRoleRequestDAO {
             LOGGER.error(errorText);
             throw new DAOException(errorText, e);
         }
-    }
-
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM change_role_requests LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
-        }
-        return query;
     }
 }

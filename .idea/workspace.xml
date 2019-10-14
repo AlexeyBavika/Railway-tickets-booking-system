@@ -150,10 +150,58 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Maven.tomcat">
+  <component name="RunManager" selected="JUnit.AdminServiceTest.deleteUser">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="RailwayTicketsBookingSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceTest.deleteUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AdminServiceTest" />
+      <option name="METHOD_NAME" value="deleteUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceTest.getAllUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AdminServiceTest" />
+      <option name="METHOD_NAME" value="getAllUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminServiceTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RailwayTicketsBookingSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AdminServiceTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -162,53 +210,6 @@
       <module name="RailwayTicketsBookingSystem" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RailwayTicketsBookingSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationServiceTest.isEmailValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RailwayTicketsBookingSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
-      <option name="METHOD_NAME" value="isEmailValidShouldReturnTrue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ValidationServiceTest.isPhoneValidShouldReturnTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RailwayTicketsBookingSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.ValidationServiceTest" />
-      <option name="METHOD_NAME" value="isPhoneValidShouldReturnTrue" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -243,19 +244,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ValidationServiceTest.isEmailValidShouldReturnTrue" />
-      <item itemvalue="JUnit.ValidationServiceTest.isPhoneValidShouldReturnTrue" />
-      <item itemvalue="JUnit.ValidationServiceTest" />
       <item itemvalue="JUnit.All in RailwayTicketsBookingSystem" />
       <item itemvalue="Maven.tomcat" />
+      <item itemvalue="JUnit.AdminServiceTest.test" />
+      <item itemvalue="JUnit.AdminServiceTest.getAllUsers" />
+      <item itemvalue="JUnit.AdminServiceTest.deleteUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AdminServiceTest.deleteUser" />
+        <item itemvalue="JUnit.AdminServiceTest.getAllUsers" />
+        <item itemvalue="JUnit.AdminServiceTest.test" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in RailwayTicketsBookingSystem" />
-        <item itemvalue="JUnit.ValidationServiceTest" />
-        <item itemvalue="JUnit.ValidationServiceTest.isPhoneValidShouldReturnTrue" />
-        <item itemvalue="JUnit.ValidationServiceTest.isEmailValidShouldReturnTrue" />
       </list>
     </recent_temporary>
   </component>
@@ -266,7 +267,12 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@408b34e3" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@571059fb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@571059fb" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@43197bf1" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -344,7 +350,12 @@
       <workItem from="1570537433086" duration="796000" />
       <workItem from="1570633434262" duration="6128000" />
       <workItem from="1570705174347" duration="8704000" />
-      <workItem from="1570718555520" duration="747000" />
+      <workItem from="1570718555520" duration="1003000" />
+      <workItem from="1570804652549" duration="596000" />
+      <workItem from="1570808795589" duration="5386000" />
+      <workItem from="1570889447159" duration="5138000" />
+      <workItem from="1570975269716" duration="5881000" />
+      <workItem from="1571059861432" duration="7760000" />
     </task>
     <servers />
   </component>
@@ -377,5 +388,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/model/dao/mysql_dao_implementation/MySQLUserDAO.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,10 +1,10 @@
 package model.dao.mysql_dao_implementation;
 
-import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 import model.dao.connection.ConnectionPool;
 import model.dao.dao.RouteDAO;
 import model.entity.Route;
 import model.exception.DAOException;
+import model.service.PaginationService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLRouteDAO implements RouteDAO {
-    private final int RECORDS_PER_PAGE = 10;
     private static final Logger LOGGER = LogManager.getLogger(MySQLRouteDAO.class);
 
     private static MySQLRouteDAO instance = new MySQLRouteDAO();
@@ -63,7 +62,7 @@ public class MySQLRouteDAO implements RouteDAO {
      */
     @Override
     public List<Route> getAllRoutes(int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "routes");
 
         List<Route> routes = new ArrayList<>();
         try (Connection connection = ConnectionPool.getConnectionPoolInstance().getConnection();
@@ -114,7 +113,7 @@ public class MySQLRouteDAO implements RouteDAO {
      */
     @Override
     public List<Route> getRoutesFromDate(Date date, int currentPage) {
-        String query = paginate(currentPage);
+        String query = PaginationService.getInstance().paginate(currentPage, "routes");
         query = query.substring(26);
 
         List<Route> routes = new ArrayList<>();
@@ -166,18 +165,4 @@ public class MySQLRouteDAO implements RouteDAO {
         }
         return routes;
     }
-
-    private String paginate(int currentPage) {
-        String query = "SELECT * FROM routes LIMIT ";
-        switch (currentPage) {
-            case 1:
-                query += RECORDS_PER_PAGE;
-                break;
-            default:
-                query += (currentPage - 1) * RECORDS_PER_PAGE + ", " + RECORDS_PER_PAGE;
-                break;
-        }
-        return query;
-    }
-
 }

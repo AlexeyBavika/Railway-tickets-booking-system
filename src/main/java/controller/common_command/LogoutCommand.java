@@ -16,7 +16,12 @@ public class LogoutCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        session.removeAttribute("user");
+        session.removeAttribute("getId");
+        session.removeAttribute("getName");
+        session.removeAttribute("getSurname");
+        session.removeAttribute("getEmail");
+        session.removeAttribute("getPhone");
+        session.removeAttribute("getRoleId");
         return "main.jsp";
     }
 }

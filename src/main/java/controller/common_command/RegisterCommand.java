@@ -39,10 +39,10 @@ public class RegisterCommand implements Command {
     }
 
     private boolean checkValidation(String name, String surname, String email, String password, String phone) {
-        return (ValidationService.getInstance().isUANameValid(name) && ValidationService.getInstance().isUANameValid(surname))
-                || (ValidationService.getInstance().isRUNameValid(name) && ValidationService.getInstance().isRUNameValid(surname))
-                || (ValidationService.getInstance().isENNameValid(name) && ValidationService.getInstance().isENNameValid(surname))
-                && ValidationService.getInstance().isEmailValid(email) && ValidationService.getInstance().isPasswordValid(password)
-                && ValidationService.getInstance().isPhoneValid(phone);
+        return (ValidationService.getInstance().isUANameValid(name) && ValidationService.isUANameValid(surname))
+                || (ValidationService.isRUNameValid(name) && ValidationService.isRUNameValid(surname))
+                || (ValidationService.isENNameValid(name) && ValidationService.isENNameValid(surname))
+                && ValidationService.isEmailValid(email) && ValidationService.isPasswordValid(password)
+                && ValidationService.isPhoneValid(phone);
     }
 }
